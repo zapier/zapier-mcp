@@ -29,8 +29,6 @@ All through natural language commands—just describe what you want done.
 
 ## 📚 Getting Started
 
-Choose your path:
-
 ### 🌟 **For Everyone**
 Quick setup guides and user-friendly overview:
 
@@ -44,6 +42,6 @@ Get technical documentation, API references, and integration guides:
 ## 🛟 Support
 If you need assistance with Zapier MCP, please reach out here:
 
-**[🆘 Zapier MCP Support →](https://aiactions.zapier.app/mcp)**
+**[🆘 Zapier MCP Support →](https://mcp.zapier.app/home)**
 
 *Zapier MCP is part of the [Model Context Protocol](https://modelcontextprotocol.io/) ecosystem*
