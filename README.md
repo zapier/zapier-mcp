@@ -4,7 +4,7 @@
 
 Transform your AI assistant from a conversational tool into a functional extension of your applications. [Zapier MCP](https://zapier.com/mcp) is a **remote** MCP server that gives your AI direct access to 8,000+ apps and 30,000+ actions—no complex API integrations required.
 
-https://github.com/user-attachments/assets/f506f608-141b-4e4a-a069-19e3a0874445
+https://github.com/user-attachments/assets/8304058f-67da-40b9-bc4f-5095b2817d61
 
 ## 🚀 What is Zapier MCP?
 
