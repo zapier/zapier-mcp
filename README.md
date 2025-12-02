@@ -33,11 +33,13 @@ All through natural language commands—just describe what you want done.
 Quick setup guides and user-friendly overview:
 
 **[🏠 Zapier MCP →](https://zapier.com/mcp)**
+**[🤖 Claude Skills →](/skills/)**
 
 ### 👨‍💻 **For Developers**
 Get technical documentation, API references, and integration guides:
 
 **[📖 Developer Documentation →](https://docs.zapier.com/mcp/home)**
+**[🤖 Claude Skills →](/skills/)**
 
 ## 🛟 Support
 If you need assistance with Zapier MCP, please reach out here:
