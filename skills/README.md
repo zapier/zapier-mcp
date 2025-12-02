@@ -17,11 +17,10 @@ Together, they let you accomplish complex multi-app workflows in seconds instead
 
 ## Available Skills
 
-| Skill | Description | Apps Used |
+| Skill | Description | Apps to Connect |
 |-------|-------------|-----------|
-| [ai-powered-crm-updates](./ai-powered-crm-updates/) | Transform meeting notes into CRM records with contacts, companies, and follow-up tasks | HubSpot, Salesforce, Gmail |
+| [ai-powered-crm-updates](./ai-powered-crm-updates/) | Transform meeting notes into CRM records with contacts, companies, and follow-up tasks | HubSpot/Salesforce, Gmail |
 | [digital-ea](./digital-ea/) | Analyze your calendar, email, and Slack to align daily work with priorities | Google Calendar, Gmail, Slack |
-| [git-branch-cleanup](./git-branch-cleanup/) | Prune stale local branches by checking merge status and ticket state | GitLab, Jira |
 | [code-review-context](./code-review-context/) | Assemble full context for MRs from tickets and design docs | GitLab/GitHub, Jira, Notion |
 
 ## Quick Start
@@ -68,15 +67,6 @@ skill-name/
 ├── references/       # Additional docs Claude can access
 └── scripts/          # Executable code (if needed)
 ```
-
-## Requirements by Skill
-
-| Skill | Required Zapier Connections |
-|-------|----------------------------|
-| ai-powered-crm-updates | HubSpot OR Salesforce, Gmail (optional) |
-| digital-ea | Google Calendar, Gmail, Slack |
-| git-branch-cleanup | GitLab, Jira |
-| code-review-context | GitLab OR GitHub, Jira, Notion OR Coda |
 
 ## Contributing
 
