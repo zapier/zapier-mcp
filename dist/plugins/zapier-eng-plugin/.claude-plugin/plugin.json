@@ -1,0 +1,9 @@
+{
+  "name": "zapier-eng-plugin",
+  "version": "1.0.0",
+  "description": "Engineering workflow plugin with Jira integration",
+  "author": {
+    "name": "Zapier",
+    "email": "support@zapier.com"
+  }
+}
