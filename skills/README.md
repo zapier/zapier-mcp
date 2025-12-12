@@ -11,7 +11,7 @@ Together, they let you accomplish complex multi-app workflows in seconds instead
 
 | Without Skills | With Skills |
 |----------------|-------------|
-| "Search HubSpot for... now create a task... wait, let me also check Gmail..." | "Update CRM with this meeting" → Done |
+| "Fetch the Jira ticket... now create a branch... what should I name it?" | "work on PROJ-123" → Done |
 | You orchestrate each step | Claude handles the workflow |
 | Inconsistent results | Reliable, repeatable patterns |
 
@@ -19,9 +19,9 @@ Together, they let you accomplish complex multi-app workflows in seconds instead
 
 | Skill | Description | Apps to Connect |
 |-------|-------------|-----------|
-| [ai-powered-crm-updates](./ai-powered-crm-updates/) | Transform meeting notes into CRM records with contacts, companies, and follow-up tasks | HubSpot/Salesforce, Gmail |
-| [digital-ea](./digital-ea/) | Analyze your calendar, email, and Slack to align daily work with priorities | Google Calendar, Gmail, Slack |
-| [code-review-context](./code-review-context/) | Assemble full context for MRs from tickets and design docs | GitLab/GitHub, Jira, Notion |
+| [work-on-ticket](./work-on-ticket/) | Fetches Jira ticket details, creates an appropriately named branch, and initiates task planning | Jira |
+| [git-commit](./git-commit/) | Generates storytelling-focused Conventional Commits messages with Jira context integration | Jira |
+| [code-review](./code-review/) | Performs comprehensive code reviews of git branches, analyzing code quality, security, performance, and best practices | Jira |
 
 ## Quick Start
 
@@ -35,7 +35,7 @@ Together, they let you accomplish complex multi-app workflows in seconds instead
 
 **Claude.ai:**
 1. Download the Skill folder (or clone this repo)
-2. Zip the individual skill folder (e.g., `ai-powered-crm-updates/`)
+2. Zip the individual skill folder (e.g., `work-on-ticket/`)
 3. Go to **Settings → Skills → Upload Skill**
 4. Select the zipped folder
 
@@ -45,17 +45,28 @@ Together, they let you accomplish complex multi-app workflows in seconds instead
 
 ### Verify It Works
 
-After installing the CRM Updates skill, try:
+After installing a skill, try one of these:
 
+**work-on-ticket:**
 ```
-Update CRM with this:
-
-Met with Jane Smith from Acme Corp today. 
-Discussed Q1 goals. She wants a proposal by Friday.
-jane@acme.com
+work on PROJ-123
 ```
 
-Claude should automatically search your CRM, create/update records, and set up follow-up tasks.
+Claude should automatically fetch the Jira ticket, create an appropriately named branch, and initiate task planning.
+
+**git-commit:**
+```
+commit
+```
+
+Claude should analyze your staged changes, ask for context, and generate a comprehensive commit message.
+
+**code-review:**
+```
+review AGP-123
+```
+
+Claude should find the branch for that ticket and perform a comprehensive code review.
 
 ## Skill Structure
 
@@ -77,18 +88,18 @@ Currently we are not accepting contributions but feel free to create your own!
 - **Description must include triggers**: What phrases should activate this Skill?
 - **Always specify "via Zapier MCP"**: Make it clear which app is being called
 - **Include examples**: Show real input → output scenarios
-- **Handle errors gracefully**: What happens when a CRM search returns nothing?
+- **Handle errors gracefully**: What happens when a ticket isn't found or a git operation fails?
 
 ## Troubleshooting
 
 **Skill doesn't trigger automatically**  
-Try invoking explicitly: "Use the ai-powered-crm-updates skill to..."
+Try invoking explicitly: "Use the work-on-ticket skill to..." or "Use the git-commit skill to..."
 
 **MCP connection errors**  
 Verify your Zapier MCP is connected: Claude.ai → Settings → Extensions → Zapier
 
-**Wrong app being used**  
-If you have multiple CRMs connected, specify which one: "Update HubSpot with this meeting"
+**Jira not responding**  
+Verify your Jira connection in Zapier and ensure you have the proper permissions
 
 ## Resources
 
