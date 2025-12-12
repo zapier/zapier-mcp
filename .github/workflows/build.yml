@@ -1,0 +1,91 @@
+name: Build Plugins
+
+on:
+  push:
+    branches: [ main, staging ]
+    paths:
+      - 'skills/**'
+      - 'commands/**'
+      - 'plugins/**/manifest.json'
+      - 'Makefile'
+  pull_request:
+    branches: [ main, staging ]
+    paths:
+      - 'skills/**'
+      - 'commands/**'
+      - 'plugins/**/manifest.json'
+      - 'Makefile'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq make
+      
+      - name: Verify dependencies
+        run: |
+          jq --version
+          make --version
+      
+      - name: List plugins
+        run: make list-plugins
+      
+      - name: Build all plugins
+        run: make build-all
+      
+      - name: Verify builds
+        run: |
+          echo "Checking built files..."
+          for plugin_dir in plugins/*; do
+            if [ -d "$plugin_dir" ] && [ -f "$plugin_dir/manifest.json" ]; then
+              plugin_name=$(basename "$plugin_dir")
+              echo "Verifying $plugin_name..."
+              
+              # Check that skills were copied
+              if [ -d "$plugin_dir/skills" ] && [ "$(ls -A $plugin_dir/skills)" ]; then
+                echo "  ✓ Skills directory populated"
+              else
+                echo "  ✗ Skills directory empty or missing"
+                exit 1
+              fi
+              
+              # Check that commands were copied (if any specified)
+              commands_count=$(jq -r '.commands | length' "$plugin_dir/manifest.json")
+              if [ "$commands_count" -gt 0 ]; then
+                if [ -d "$plugin_dir/commands" ] && [ "$(ls -A $plugin_dir/commands)" ]; then
+                  echo "  ✓ Commands directory populated"
+                else
+                  echo "  ✗ Commands directory empty or missing"
+                  exit 1
+                fi
+              fi
+            fi
+          done
+          echo "All plugins verified successfully!"
+      
+      - name: Upload plugin artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: plugins
+          path: plugins/
+          retention-days: 30
+      
+      - name: Check for uncommitted changes
+        run: |
+          # This ensures the build is reproducible and no manual edits were made to plugin files
+          if [ -n "$(git status --porcelain plugins/)" ]; then
+            echo "Error: Uncommitted changes detected in plugins/"
+            echo "This suggests manual edits were made to generated files."
+            echo "Please edit source files in skills/ or commands/ instead."
+            git status --porcelain plugins/
+            exit 1
+          fi
+          echo "✓ No uncommitted changes in plugins/ (build is clean)"
+

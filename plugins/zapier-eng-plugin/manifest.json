@@ -1,0 +1,14 @@
+{
+  "name": "zapier-eng-plugin",
+  "version": "1.0.0",
+  "description": "Engineering workflow plugin with Jira integration",
+  "skills": [
+    "work-on-ticket",
+    "git-commit",
+    "code-review"
+  ],
+  "commands": [
+    "eng/chore"
+  ]
+}
+

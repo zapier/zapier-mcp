@@ -4,7 +4,7 @@ Pre-built Skills that supercharge your Zapier MCP integration with Claude. These
 
 ## What are Skills?
 
-**Zapier MCP** gives Claude access to 7,000+ apps through a universal API.  
+**Zapier MCP** gives Claude access to 8,000+ apps through a universal resolver.  
 **Skills** teach Claude the best workflows for common tasks.
 
 Together, they let you accomplish complex multi-app workflows in seconds instead of minutes.
@@ -33,15 +33,15 @@ Together, they let you accomplish complex multi-app workflows in seconds instead
 
 ### Installation
 
+**Claude Code:** (Preferred for now)
+1. Use the Plugins or copy skill folders to your Claude Code skills directory
+2. Skills are automatically available
+
 **Claude.ai:**
 1. Download the Skill folder (or clone this repo)
 2. Zip the individual skill folder (e.g., `work-on-ticket/`)
 3. Go to **Settings → Skills → Upload Skill**
 4. Select the zipped folder
-
-**Claude Code:**
-1. Clone this repo or copy skill folders to your Claude Code skills directory
-2. Skills are automatically available
 
 ### Verify It Works
 
@@ -93,7 +93,7 @@ Currently we are not accepting contributions but feel free to create your own!
 ## Troubleshooting
 
 **Skill doesn't trigger automatically**  
-Try invoking explicitly: "Use the work-on-ticket skill to..." or "Use the git-commit skill to..."
+Try invoking explicitly: "Use the work-on-ticket skill to..." or "Use the git-commit skill to..." or use the `CLAUDE.md` file as guidance on how to help coach Claude on when to use the skills.
 
 **MCP connection errors**  
 Verify your Zapier MCP is connected: Claude.ai → Settings → Extensions → Zapier

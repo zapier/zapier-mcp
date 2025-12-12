@@ -41,6 +41,37 @@ Get technical documentation, API references, and integration guides:
 **[📖 Developer Documentation →](https://docs.zapier.com/mcp/home)**
 **[🤖 Claude Skills →](/skills/)**
 
+## 🏗️ Repository Structure & Development
+
+This repository is not explicitly our Zapier MCP server, but rather all accompanying docs associated with it and organized to maximize reusability and maintainability:
+
+```
+zapier-mcp/
+├── skills/              # Source of truth for all skills
+├── commands/            # Source of truth for all commands  
+├── plugins/             # Plugin distributions (built from skills/commands)
+├── Makefile             # Build system
+└── BUILD.md             # Build system documentation
+```
+
+### Quick Start for Developers
+
+```bash
+# Initial setup
+./scripts/setup.sh
+
+# Build all plugins
+make build-all
+
+# Build a specific plugin
+make build PLUGIN=zapier-eng-plugin
+```
+
+**Documentation:**
+- **[QUICKSTART.md](/QUICKSTART.md)** - Get started in 5 minutes
+- **[BUILD.md](/BUILD.md)** - Complete build system documentation
+- **[CONTRIBUTING.md](/CONTRIBUTING.md)** - Development guidelines
+
 ## 🛟 Support
 If you need assistance with Zapier MCP, please reach out here:
 
