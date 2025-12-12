@@ -1,0 +1,24 @@
+{
+  "name": "zapier-eng-plugin",
+  "version": "1.0.0",
+  "description": "Engineering workflow plugin with Jira integration",
+  "author": {
+    "name": "Zapier",
+    "email": "support@zapier.com"
+  },
+  "mcp_servers": {
+    "zapier": {
+      "type": "http",
+      "url": "https://mcp.zapier.com/api/v1/connect"
+    }
+  },
+  "skills": [
+    "work-on-ticket",
+    "git-commit",
+    "code-review"
+  ],
+  "commands": [
+    "eng/chore"
+  ]
+}
+
