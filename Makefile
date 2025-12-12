@@ -1,4 +1,4 @@
-.PHONY: help build build-all clean clean-all list-plugins
+.PHONY: help build build-all clean clean-all list-plugins zip-skills
 
 # Colors for output
 GREEN  := \033[0;32m
@@ -11,6 +11,7 @@ ROOT_DIR := $(shell pwd)
 SKILLS_DIR := $(ROOT_DIR)/skills
 COMMANDS_DIR := $(ROOT_DIR)/commands
 PLUGINS_DIR := $(ROOT_DIR)/plugins
+DIST_DIR := $(ROOT_DIR)/dist
 
 help: ## Show this help message
 	@echo "$(BLUE)Available targets:$(NC)"
@@ -18,14 +19,10 @@ help: ## Show this help message
 
 list-plugins: ## List all available plugins
 	@echo "$(BLUE)Available plugins:$(NC)"
-	@for plugin_dir in $(PLUGINS_DIR)/*; do \
-		if [ -d "$$plugin_dir" ]; then \
-			plugin_name=$$(basename "$$plugin_dir"); \
-			if [ -f "$$plugin_dir/manifest.json" ]; then \
-				echo "  $(GREEN)✓$(NC) $$plugin_name (has manifest)"; \
-			else \
-				echo "  $(YELLOW)○$(NC) $$plugin_name (no manifest)"; \
-			fi; \
+	@for plugin_file in $(PLUGINS_DIR)/*.json; do \
+		if [ -f "$$plugin_file" ]; then \
+			plugin_name=$$(basename "$$plugin_file" .json); \
+			echo "  $(GREEN)✓$(NC) $$plugin_name"; \
 		fi; \
 	done
 
@@ -40,9 +37,9 @@ endif
 
 build-all: ## Build all plugins
 	@echo "$(BLUE)Building all plugins...$(NC)"
-	@for plugin_dir in $(PLUGINS_DIR)/*; do \
-		if [ -d "$$plugin_dir" ] && [ -f "$$plugin_dir/manifest.json" ]; then \
-			plugin_name=$$(basename "$$plugin_dir"); \
+	@for plugin_file in $(PLUGINS_DIR)/*.json; do \
+		if [ -f "$$plugin_file" ]; then \
+			plugin_name=$$(basename "$$plugin_file" .json); \
 			echo "$(BLUE)Building $$plugin_name...$(NC)"; \
 			$(MAKE) build-plugin PLUGIN=$$plugin_name; \
 		fi; \
@@ -50,25 +47,24 @@ build-all: ## Build all plugins
 	@echo "$(GREEN)✓ All plugins built successfully!$(NC)"
 
 build-plugin:
-	@if [ ! -f "$(PLUGINS_DIR)/$(PLUGIN)/manifest.json" ]; then \
-		echo "$(YELLOW)Error: manifest.json not found in $(PLUGINS_DIR)/$(PLUGIN)$(NC)"; \
+	@if [ ! -f "$(PLUGINS_DIR)/$(PLUGIN).json" ]; then \
+		echo "$(YELLOW)Error: $(PLUGIN).json not found in $(PLUGINS_DIR)$(NC)"; \
 		exit 1; \
 	fi
 	@echo "$(BLUE)Building $(PLUGIN)...$(NC)"
 	
-	# Clean existing skills and commands (except .gitkeep)
-	@find "$(PLUGINS_DIR)/$(PLUGIN)/skills" -mindepth 1 ! -name '.gitkeep' -delete 2>/dev/null || true
-	@find "$(PLUGINS_DIR)/$(PLUGIN)/commands" -mindepth 1 ! -name '.gitkeep' -delete 2>/dev/null || true
-	@mkdir -p "$(PLUGINS_DIR)/$(PLUGIN)/skills"
-	@mkdir -p "$(PLUGINS_DIR)/$(PLUGIN)/commands"
+	# Create output directory structure
+	@mkdir -p "$(DIST_DIR)/plugins/$(PLUGIN)/skills"
+	@mkdir -p "$(DIST_DIR)/plugins/$(PLUGIN)/commands"
+	@mkdir -p "$(DIST_DIR)/plugins/$(PLUGIN)/.claude-plugin"
 	
 	# Copy skills
 	@echo "  Copying skills..."
-	@skills=$$(jq -r '.skills[]?' "$(PLUGINS_DIR)/$(PLUGIN)/manifest.json"); \
+	@skills=$$(jq -r '.skills[]?' "$(PLUGINS_DIR)/$(PLUGIN).json"); \
 	for skill in $$skills; do \
 		if [ -d "$(SKILLS_DIR)/$$skill" ]; then \
 			echo "    $(GREEN)✓$(NC) $$skill"; \
-			cp -r "$(SKILLS_DIR)/$$skill" "$(PLUGINS_DIR)/$(PLUGIN)/skills/"; \
+			cp -r "$(SKILLS_DIR)/$$skill" "$(DIST_DIR)/plugins/$(PLUGIN)/skills/"; \
 		else \
 			echo "    $(YELLOW)✗$(NC) $$skill (not found)"; \
 		fi; \
@@ -76,16 +72,27 @@ build-plugin:
 	
 	# Copy commands
 	@echo "  Copying commands..."
-	@commands=$$(jq -r '.commands[]?' "$(PLUGINS_DIR)/$(PLUGIN)/manifest.json"); \
+	@commands=$$(jq -r '.commands[]?' "$(PLUGINS_DIR)/$(PLUGIN).json"); \
 	for cmd in $$commands; do \
 		if [ -f "$(COMMANDS_DIR)/$$cmd.md" ]; then \
 			echo "    $(GREEN)✓$(NC) $$cmd"; \
-			mkdir -p "$$(dirname "$(PLUGINS_DIR)/$(PLUGIN)/commands/$$cmd.md")"; \
-			cp "$(COMMANDS_DIR)/$$cmd.md" "$(PLUGINS_DIR)/$(PLUGIN)/commands/$$cmd.md"; \
+			mkdir -p "$$(dirname "$(DIST_DIR)/plugins/$(PLUGIN)/commands/$$cmd.md")"; \
+			cp "$(COMMANDS_DIR)/$$cmd.md" "$(DIST_DIR)/plugins/$(PLUGIN)/commands/$$cmd.md"; \
 		else \
 			echo "    $(YELLOW)✗$(NC) $$cmd (not found)"; \
 		fi; \
 	done
+	
+	# Generate .mcp.json
+	@echo "  Generating .mcp.json..."
+	@jq '.mcp_servers // {}' "$(PLUGINS_DIR)/$(PLUGIN).json" > "$(DIST_DIR)/plugins/$(PLUGIN)/.mcp.json"
+	@echo "    $(GREEN)✓$(NC) .mcp.json"
+	
+	# Generate .claude-plugin/plugin.json
+	@echo "  Generating .claude-plugin/plugin.json..."
+	@jq '{name: .name, version: .version, description: .description, author: .author}' \
+		"$(PLUGINS_DIR)/$(PLUGIN).json" > "$(DIST_DIR)/plugins/$(PLUGIN)/.claude-plugin/plugin.json"
+	@echo "    $(GREEN)✓$(NC) .claude-plugin/plugin.json"
 	
 	@echo "$(GREEN)✓ $(PLUGIN) built successfully!$(NC)"
 
@@ -96,20 +103,12 @@ ifndef PLUGIN
 	@exit 1
 endif
 	@echo "$(BLUE)Cleaning $(PLUGIN)...$(NC)"
-	@find "$(PLUGINS_DIR)/$(PLUGIN)/skills" -mindepth 1 ! -name '.gitkeep' -delete 2>/dev/null || true
-	@find "$(PLUGINS_DIR)/$(PLUGIN)/commands" -mindepth 1 ! -name '.gitkeep' -delete 2>/dev/null || true
+	@rm -rf "$(DIST_DIR)/plugins/$(PLUGIN)"
 	@echo "$(GREEN)✓ $(PLUGIN) cleaned!$(NC)"
 
 clean-all: ## Clean all plugins
 	@echo "$(BLUE)Cleaning all plugins...$(NC)"
-	@for plugin_dir in $(PLUGINS_DIR)/*; do \
-		if [ -d "$$plugin_dir" ]; then \
-			plugin_name=$$(basename "$$plugin_dir"); \
-			echo "  Cleaning $$plugin_name..."; \
-			find "$$plugin_dir/skills" -mindepth 1 ! -name '.gitkeep' -delete 2>/dev/null || true; \
-			find "$$plugin_dir/commands" -mindepth 1 ! -name '.gitkeep' -delete 2>/dev/null || true; \
-		fi; \
-	done
+	@rm -rf "$(DIST_DIR)/plugins"/*
 	@echo "$(GREEN)✓ All plugins cleaned!$(NC)"
 
 watch: ## Watch for changes and rebuild (requires fswatch)
@@ -129,4 +128,17 @@ endif
 		echo "$(BLUE)Changes detected, rebuilding $(PLUGIN)...$(NC)"; \
 		$(MAKE) build-plugin PLUGIN=$(PLUGIN); \
 	done
+
+zip-skills: ## Create zip files for all individual skills
+	@echo "$(BLUE)Creating skill zip files...$(NC)"
+	@mkdir -p "$(DIST_DIR)/skills"
+	@for skill_dir in $(SKILLS_DIR)/*; do \
+		if [ -d "$$skill_dir" ] && [ -f "$$skill_dir/SKILL.md" ]; then \
+			skill_name=$$(basename "$$skill_dir"); \
+			echo "  Zipping $$skill_name..."; \
+			cd "$(SKILLS_DIR)" && zip -r "$(DIST_DIR)/skills/$$skill_name.zip" "$$skill_name" -x "*.DS_Store" > /dev/null; \
+			echo "    $(GREEN)✓$(NC) $(DIST_DIR)/skills/$$skill_name.zip"; \
+		fi; \
+	done
+	@echo "$(GREEN)✓ All skills zipped!$(NC)"
 

@@ -15,11 +15,17 @@ zapier-mcp/
 ├── commands/            # Source of truth for all commands
 │   └── eng/
 │       └── chore.md
-├── plugins/             # Plugin distributions
-│   └── zapier-eng-plugin/
-│       ├── manifest.json    # Declares which skills/commands to include
-│       ├── skills/          # Built by make (gitignored)
-│       └── commands/        # Built by make (gitignored)
+├── plugins/             # Plugin manifests (source)
+│   ├── zapier-eng-plugin.json    # Plugin manifest
+│   └── README.md
+├── dist/                # Built distributions (gitignored)
+│   ├── skills/          # Individual skill zips
+│   └── plugins/         # Built plugin directories
+│       └── zapier-eng-plugin/
+│           ├── .mcp.json
+│           ├── .claude-plugin/
+│           ├── skills/
+│           └── commands/
 ├── Makefile             # Build system
 └── BUILD.md             # This file
 ```
@@ -52,13 +58,23 @@ make list-plugins
 
 ## Plugin Manifest
 
-Each plugin has a `manifest.json` that declares which skills and commands to include:
+Each plugin has a JSON file in `plugins/` (e.g., `plugins/zapier-eng-plugin.json`) that declares which skills and commands to include:
 
 ```json
 {
   "name": "zapier-eng-plugin",
   "version": "1.0.0",
   "description": "Engineering workflow plugin with Jira integration",
+  "author": {
+    "name": "Zapier",
+    "email": "support@zapier.com"
+  },
+  "mcp_servers": {
+    "zapier": {
+      "type": "http",
+      "url": "https://mcp.zapier.com/api/v1/connect"
+    }
+  },
   "skills": [
     "work-on-ticket",
     "git-commit",
@@ -85,24 +101,27 @@ Targets include:
 - `clean-all` - Clean all plugins
 - `list-plugins` - List all available plugins
 - `watch` - Watch for changes and auto-rebuild (requires fswatch)
+- `zip-skills` - Create zip files for all individual skills
 
 ## Creating a New Plugin
 
-1. Create a new directory under `plugins/`:
+1. Create a new JSON file in `plugins/`:
    ```bash
-   mkdir -p plugins/my-new-plugin/skills
-   mkdir -p plugins/my-new-plugin/commands
-   touch plugins/my-new-plugin/skills/.gitkeep
-   touch plugins/my-new-plugin/commands/.gitkeep
-   ```
-
-2. Create a `manifest.json`:
-   ```bash
-   cat > plugins/my-new-plugin/manifest.json << 'EOF'
+   cat > plugins/my-new-plugin.json << 'EOF'
    {
      "name": "my-new-plugin",
      "version": "1.0.0",
      "description": "My custom plugin",
+     "author": {
+       "name": "Your Name",
+       "email": "your@email.com"
+     },
+     "mcp_servers": {
+       "zapier": {
+         "type": "http",
+         "url": "https://mcp.zapier.com/api/v1/connect"
+       }
+     },
      "skills": [
        "work-on-ticket"
      ],
@@ -113,7 +132,7 @@ Targets include:
    EOF
    ```
 
-3. Build the plugin:
+2. Build the plugin:
    ```bash
    make build PLUGIN=my-new-plugin
    ```
@@ -138,6 +157,28 @@ make watch PLUGIN=zapier-eng-plugin
 ```
 
 This will automatically rebuild the plugin when files change in `skills/` or `commands/`.
+
+## Creating Distribution Zips
+
+Create zip files for all skills (useful for uploading to Claude.ai):
+
+```bash
+make zip-skills
+```
+
+This creates `dist/skills/skill-name.zip` for each skill.
+
+**Distribution Structure:**
+```
+dist/
+├── README.md
+└── skills/
+    ├── work-on-ticket.zip
+    ├── git-commit.zip
+    └── code-review.zip
+```
+
+The `dist/` directory is gitignored (except README.md) - these are generated artifacts.
 
 ## CI/CD Integration
 

@@ -1,14 +1,14 @@
 # Zapier MCP Plugins
 
-This directory contains plugin distributions built from the skills and commands in the root directory.
+This directory contains plugin manifests that define which skills and commands to include in each plugin.
 
 ## What are Plugins?
 
 Plugins are curated collections of skills and commands for specific use cases. Each plugin:
 
-- Has a `manifest.json` declaring which skills/commands it includes
-- Is built by running `make build PLUGIN=plugin-name`
-- Contains copies of the relevant skills and commands (gitignored)
+- Has a `manifest.json` in this directory declaring which skills/commands it includes
+- Is built to `dist/plugins/plugin-name/` by running `make build PLUGIN=plugin-name`
+- Built plugins include `.mcp.json` and `.claude-plugin/plugin.json` generated from the manifest
 
 ## Available Plugins
 
@@ -27,32 +27,46 @@ Engineering workflow plugin with Jira integration.
 
 ## Plugin Structure
 
-Each plugin has the following structure:
-
+**Source (this directory):**
 ```
-plugin-name/
-├── manifest.json        # Declares which skills/commands to include
-├── .mcp.json           # MCP server configuration
-├── .claude-plugin/     # Claude plugin metadata
+plugins/
+└── plugin-name.json        # Declares what to include + metadata
+```
+
+**Built output (dist/plugins/):**
+```
+dist/plugins/plugin-name/
+├── .mcp.json           # Generated from manifest.mcp_servers
+├── .claude-plugin/     # Generated from manifest metadata
 │   └── plugin.json
-├── skills/             # Built by make (gitignored)
-└── commands/           # Built by make (gitignored)
+├── skills/             # Copied from /skills/ based on manifest
+└── commands/           # Copied from /commands/ based on manifest
 ```
 
 ## Creating a New Plugin
 
-1. **Create plugin directory:**
+1. **Create plugin directory and manifest:**
    ```bash
-   mkdir -p plugins/my-plugin/skills
-   mkdir -p plugins/my-plugin/commands
+   mkdir -p plugins
+   touch plugins/plugin-name.json
    ```
 
-2. **Create manifest.json:**
+2. **Create plugin-name.json:**
    ```json
    {
      "name": "my-plugin",
      "version": "1.0.0",
      "description": "My custom plugin",
+     "author": {
+       "name": "Your Name",
+       "email": "your@email.com"
+     },
+     "mcp_servers": {
+       "zapier": {
+         "type": "http",
+         "url": "https://mcp.zapier.com/api/v1/connect"
+       }
+     },
      "skills": [
        "work-on-ticket"
      ],
@@ -67,6 +81,11 @@ plugin-name/
    make build PLUGIN=my-plugin
    ```
 
+4. **Find the built plugin:**
+   ```bash
+   ls dist/plugins/my-plugin/
+   ```
+
 See [BUILD.md](/BUILD.md) for complete documentation.
 
 ## Development Workflow
@@ -75,16 +94,23 @@ When editing skills or commands:
 
 1. Edit files in the root `/skills/` or `/commands/` directories (source of truth)
 2. Rebuild plugins: `make build-all`
-3. Test your changes
+3. Test your changes in `dist/plugins/plugin-name/`
+
+When editing plugin configuration:
+
+1. Edit the `manifest.json` in this directory
+2. Rebuild the plugin: `make build PLUGIN=plugin-name`
+3. Check the generated files in `dist/plugins/plugin-name/`
 
 ## Why This Structure?
 
 **Benefits:**
-- ✅ Single source of truth for all skills and commands
-- ✅ Easy to maintain shared skills across plugins
-- ✅ Plugins can cherry-pick only what they need
-- ✅ No code duplication
-- ✅ Simple versioning and distribution
+- ✅ Single source of truth for skills and commands in root directories
+- ✅ Plugin manifests are lightweight and tracked in git
+- ✅ Built plugins are in `dist/` (gitignored) - clean separation
+- ✅ `.mcp.json` and `.claude-plugin/` files auto-generated from manifest
+- ✅ Easy to maintain and version plugins
+- ✅ No code duplication across plugins
 
-**Plugin files are gitignored** because they're generated from the source files. This prevents conflicts and ensures consistency.
+**Built plugins are gitignored** because they're generated artifacts. Only manifests are tracked in git.
 

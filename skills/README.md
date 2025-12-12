@@ -38,10 +38,17 @@ Together, they let you accomplish complex multi-app workflows in seconds instead
 2. Skills are automatically available
 
 **Claude.ai:**
-1. Download the Skill folder (or clone this repo)
-2. Zip the individual skill folder (e.g., `work-on-ticket/`)
-3. Go to **Settings → Skills → Upload Skill**
-4. Select the zipped folder
+1. **Option A - Use pre-built zips:**
+   - Run `make zip-skills` in the repo to generate skill zips
+   - Find the zip in `dist/skills/skill-name.zip`
+   - Go to **Settings → Skills → Upload Skill**
+   - Select the zipped folder
+
+2. **Option B - Manual:**
+   - Download the Skill folder (or clone this repo)
+   - Zip the individual skill folder (e.g., `work-on-ticket/`)
+   - Go to **Settings → Skills → Upload Skill**
+   - Select the zipped folder
 
 ### Verify It Works
 
