@@ -2,7 +2,7 @@
   "name": "zapier",
   "displayName": "Zapier",
   "version": "1.0.0",
-  "description": "Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.",
+  "description": "USER LEVEL: You trigger cross-app automations from chat—send a Slack message, create a Jira ticket, update a spreadsheet—without opening each tool. PROJECT LEVEL: Repetitive glue between services becomes a single Zapier action instead of bespoke scripts scattered across the repo. Connect 8,000+ apps: discover and enable Zapier actions, sign in once, and let the assistant run automations from chat without switching tools. BEST SUITED FOR: • Teams bridging Slack, Jira, Google Sheets, email, and CRMs • Projects that need lightweight automation without custom integrations • Workflows where non-engineers trigger cross-service actions",
   "author": {
     "name": "Zapier",
     "email": "support@zapier.com"
