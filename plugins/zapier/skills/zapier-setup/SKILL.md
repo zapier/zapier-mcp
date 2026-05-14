@@ -13,7 +13,7 @@ Start by describing what Zapier MCP can do for the user, then get them authentic
 
 ### Pitch
 
-"Zapier MCP connects your AI assistant to 9,000+ apps — Slack, Gmail, Google Calendar, Jira, Notion, HubSpot, and thousands more. Once set up, you can search across your tools, take actions, and automate workflows, all through natural conversation. It's personalized to your workflow — you pick the apps and actions that matter to you, and your AI learns to use them."
+"Zapier MCP connects your AI assistant to 9,000+ apps — Slack, Gmail, Google Calendar, Jira, Notion, HubSpot, and more. You pick the apps and actions, then search, take actions, and automate workflows through natural conversation."
 
 ### Check connection
 
@@ -90,27 +90,16 @@ Sign in, find your server, and re-authenticate. Come back and say **done** when 
 2. Wait for the user to confirm.
 3. Try calling a Zapier tool again to verify.
 4. If it works: show the Healthy summary.
-5. If it still fails: suggest deleting and recreating the server config. Offer to help update the MCP config file with a fresh token (see "MCP config by client" below).
+5. If it still fails: suggest deleting and recreating the server config. Offer to help update the MCP config file with a fresh token (see [CLIENT_REFERENCE.md](CLIENT_REFERENCE.md)).
 
 ## Branch: Not connected
 
-The Zapier MCP server is installed via the plugin but hasn't been authenticated yet. This is the most common state on a fresh install — zero Zapier tools are visible because the server hasn't been connected.
+The Zapier MCP server is installed via the plugin but hasn't been authenticated yet.
 
 1. Tell the user the Zapier plugin is installed but needs to be connected first.
-
-2. Attempt to authenticate directly in the chat by calling `mcp_auth` on the Zapier MCP server. If that succeeds, skip to step 5.
-
-3. If `mcp_auth` fails or is unavailable, fall back to manual instructions based on their client:
-
-   - **In Cursor:** "Go to **Settings > Cursor Settings > Tools & MCP** and click **Connect** next to the Zapier MCP server. You can also press **Cmd+Shift+P** and search for 'MCP' to get there quickly."
-   - **In Claude Desktop:** "Go to **Customize > Connectors > Zapier** and click **Connect**."
-   - **In other clients:** "Find the Zapier MCP server in your client's MCP settings and connect it. This will redirect you to mcp.zapier.com to sign in."
-
-   Detect which client is in use from the environment or conversation context. If unclear, give the generic instructions.
-
-4. Wait for the user to confirm ("done").
-
-5. Re-diagnose by checking available Zapier MCP tools. Proceed to the appropriate branch — most likely **Fresh install** (server connected, no action tools yet).
+2. Follow the authentication flow from **Step 1 > Check connection** (attempt `mcp_auth` first, fall back to client-specific manual instructions). If `mcp_auth` succeeds, skip to step 4.
+3. Wait for the user to confirm ("done").
+4. Re-diagnose by checking available Zapier MCP tools. Proceed to the appropriate branch — most likely **Fresh install** (server connected, no action tools yet).
 
 ## Branch: Fresh install
 
@@ -124,50 +113,19 @@ Don't ask "what apps do you use?" Start with what they're trying to accomplish.
 
 Call `get_configuration_url` and share the returned URL so the user can go directly to their server's tool config page.
 
-Then help them pick what to add based on their workflow:
-
-**Starter kits by workflow:**
-
-| Workflow                 | Apps                                                          | Why these                                              |
-| ------------------------ | ------------------------------------------------------------- | ------------------------------------------------------ |
-| **Dev workflow**         | Jira + GitLab + Slack + Google Docs                           | Issue tracking, code review, team comms, documentation |
-| **PM workflow**          | Jira + Slack + Google Docs + Google Calendar + Notion         | Planning, updates, writing, scheduling, knowledge base |
-| **Sales workflow**       | HubSpot + Gmail + Google Calendar + Slack                     | CRM, outreach, scheduling, team updates                |
-| **Marketing workflow**   | Google Sheets + Slack + Notion + Gmail                        | Data, coordination, content, campaigns                 |
-| **General productivity** | Gmail + Google Calendar + Slack + Google Docs + Google Sheets | The essentials for anyone                              |
+Then help them pick what to add based on their workflow. Refer to [STARTER_KITS.md](STARTER_KITS.md) for workflow-based starter kits and per-app action recommendations.
 
 "Pick a starter kit, or tell me what you're working on and I'll suggest the right tools."
 
 ### Step 2: Guide configuration
 
-Recommend specific actions the user should add for each app in the web UI. Aim for 2-4 actions per app: one or two search actions and one or two write actions.
-
-**Recommended starters by app:**
-
-| App             | Search actions                         | Write actions            |
-| --------------- | -------------------------------------- | ------------------------ |
-| Slack           | Find Message, Get Message              | Send Channel Message     |
-| Gmail           | Find Email                             | Send Email, Create Draft |
-| Google Calendar | Find Events                            | Create Detailed Event    |
-| Google Docs     | Get Document Content                   | Create Document          |
-| Google Sheets   | Get Data Range, Lookup Row             | Add Row                  |
-| Jira            | Find Issue by Key, Find Issues via JQL | Create Issue             |
-| Linear          | Find Issue                             | Create Issue             |
-| GitLab          | Find Merge Requests                    | (read-heavy by nature)   |
-| GitHub          | Find Issue, Find Pull Request          | Create Issue             |
-| HubSpot         | Find Contact, Find Company             | Create Contact           |
-| Notion          | Find Page, Find Database Item          | Create Page              |
-| Zoom            | Find Meeting                           | (read-heavy)             |
-| Coda            | Find Row                               | Create Row               |
-| Airtable        | Find Record                            | Create Record            |
-
-Tell the user which actions to add for their chosen apps, then wait for them to configure and authenticate everything in the web UI.
+Recommend specific actions the user should add for each app in the web UI using the per-app recommendations from [STARTER_KITS.md](STARTER_KITS.md). Tell the user which actions to add for their chosen apps, then wait for them to configure and authenticate everything in the web UI.
 
 "Add those actions and connect your app accounts in the Zapier dashboard. Come back and say **done** when you're finished."
 
 ### Step 3: Verify
 
-After the user confirms, check the available Zapier MCP tools to see what was added. If new action tools appeared, show a summary. If nothing changed, the user may need to reload their client (see "Reload instructions by client" below).
+After the user confirms, check the available Zapier MCP tools to see what was added. If new action tools appeared, show a summary. If nothing changed, the user may need to reload their client (see [CLIENT_REFERENCE.md](CLIENT_REFERENCE.md)).
 
 ### Step 4: Generate profile
 
@@ -180,25 +138,9 @@ Once everything is connected:
 
 If yes, follow the **create-my-tools-profile** skill.
 
-## MCP config by client
+## Client reference
 
-| Client         | Config file location                                                      | Scope          |
-| -------------- | ------------------------------------------------------------------------- | -------------- |
-| Cursor         | `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global)             | Project/Global |
-| Claude Desktop | `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) | Global         |
-| Claude Code    | `.mcp.json` (project) or `~/.claude/mcp.json` (global)                    | Project/Global |
-| Windsurf       | `~/.codeium/windsurf/mcp_config.json`                                     | Global         |
-
-Detect which client is in use from the environment or conversation context. If unclear, ask.
-
-## Reload instructions by client
-
-| Client         | How to reload                                 |
-| -------------- | --------------------------------------------- |
-| Cursor         | Cmd+Shift+P → "Reload Window"                 |
-| Claude Desktop | Quit and reopen the app                       |
-| Claude Code    | Run `/mcp` to check status, restart if needed |
-| Windsurf       | Cmd+Shift+P → "Reload Window"                 |
+See [CLIENT_REFERENCE.md](CLIENT_REFERENCE.md) for MCP config file paths and reload instructions per client.
 
 ## Tone
 
