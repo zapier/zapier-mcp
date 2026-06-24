@@ -18,6 +18,7 @@ https://github.com/user-attachments/assets/8304058f-67da-40b9-bc4f-5095b2817d61
 ## What's in this repo
 
 - **Per-client plugin manifests** for [Claude Code](./plugins/zapier/.claude-plugin/plugin.json), [Cursor](./plugins/zapier/.cursor-plugin/plugin.json), and [GitHub Copilot CLI](./plugins/zapier/.github/plugin/plugin.json), under `plugins/zapier/`. Installing the plugin also registers the hosted MCP server with your client — that's why `zapier` shows up under `/mcp` after install, via [`.mcp.json`](./plugins/zapier/.mcp.json).
+- **A Gemini CLI extension manifest** at [`gemini-extension.json`](./gemini-extension.json) so users can install with `gemini extensions install`
 - **A Kiro Power bundle** under [`zapier-power/`](./zapier-power/) — `POWER.md` manifest, scoped `mcp.json`, and `steering/` files for [Kiro.dev](https://kiro.dev) consumption
 - **An MCP Registry manifest** at [`server.json`](./server.json) so the hosted server is discoverable in the [official MCP Registry](https://registry.modelcontextprotocol.io)
 - **Onboarding skills** for auth, action selection, and health checks ([`skills/`](./plugins/zapier/skills/))
@@ -59,6 +60,14 @@ Open [cursor.com/marketplace/zapier](https://cursor.com/marketplace/zapier) and 
 copilot plugin marketplace add zapier/zapier-mcp
 copilot plugin install zapier@zapier-plugins
 ```
+
+### Gemini CLI
+
+```
+gemini extensions install https://github.com/zapier/zapier-mcp
+```
+
+Authenticate inside Gemini with `/mcp auth zapier`. The catalog entry is `gemini-extension.json` at the repo root.
 
 ### Kiro
 

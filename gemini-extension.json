@@ -1,0 +1,13 @@
+{
+  "name": "zapier",
+  "version": "1.0.0",
+  "description": "Connect 9,000+ apps to your AI workflow via Zapier MCP — discover, enable, and execute Zapier actions directly from Gemini CLI.",
+  "mcpServers": {
+    "zapier": {
+      "httpUrl": "https://mcp.zapier.com/api/v1/connect",
+      "oauth": {
+        "enabled": true
+      }
+    }
+  }
+}

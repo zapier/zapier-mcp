@@ -20,6 +20,7 @@ Per-client install manifests live under `plugins/zapier/`. Each surfaces the sam
 - [MCP server config](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.mcp.json): Generic `mcpServers` declaration with `"type": "http"`.
 - [Claude marketplace registry](https://github.com/zapier/zapier-mcp/blob/main/.claude-plugin/marketplace.json): Top-level marketplace entry pointing at `plugins/zapier`.
 - [Cursor marketplace registry](https://github.com/zapier/zapier-mcp/blob/main/.cursor-plugin/marketplace.json): Top-level marketplace entry pointing at `plugins/zapier`.
+- [Gemini CLI extension manifest](https://github.com/zapier/zapier-mcp/blob/main/gemini-extension.json): `gemini-extension.json` for `gemini extensions install` from the GitHub URL.
 - [MCP Registry manifest](https://github.com/zapier/zapier-mcp/blob/main/server.json): `server.json` for the [official MCP Registry](https://registry.modelcontextprotocol.io) catalog.
 
 ## Skills
