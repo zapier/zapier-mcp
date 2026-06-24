@@ -2,7 +2,26 @@
   "mcpServers": {
     "zapier": {
       "type": "http",
-      "url": "https://mcp.zapier.com/api/v1/connect"
+      "url": "https://mcp.zapier.com/api/v1/connect",
+      "_meta": {
+        "ideToolIconPath": "./assets/icon.svg",
+        "ideToolTitles": {
+          "list_enabled_zapier_actions": "List Enabled Actions",
+          "discover_zapier_actions": "Discover Actions",
+          "enable_zapier_action": "Enable Action",
+          "disable_zapier_action": "Disable Action",
+          "auto_provision_mcp": "Auto-Provision Tools",
+          "execute_zapier_read_action": "Execute Read Action",
+          "execute_zapier_write_action": "Execute Write Action",
+          "get_configuration_url": "Get Configuration URL",
+          "list_zapier_skills": "List Saved Skills",
+          "get_zapier_skill": "Get Saved Skill",
+          "create_zapier_skill": "Create Saved Skill",
+          "update_zapier_skill": "Update Saved Skill",
+          "delete_zapier_skill": "Delete Saved Skill",
+          "send_feedback": "Send Feedback"
+        }
+      }
     }
   }
 }
