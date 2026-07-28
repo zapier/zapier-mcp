@@ -20,8 +20,9 @@ Per-client install manifests live under `plugins/zapier/`. Each surfaces the sam
 - [Cursor plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.cursor-plugin/plugin.json): Manifest for Cursor's plugin marketplace.
 - [Gemini CLI extension manifest](https://github.com/zapier/zapier-mcp/blob/main/gemini-extension.json): `gemini-extension.json` for `gemini extensions install` from the GitHub URL, auto-indexed into the Gemini CLI Extensions gallery.
 - [MCP server config](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.mcp.json): Generic `mcpServers` declaration with `"type": "http"`.
-- [MCP Registry manifest](https://github.com/zapier/zapier-mcp/blob/main/server.json): `server.json` for the [official MCP Registry](https://registry.modelcontextprotocol.io) catalog.
 - [`zapier/marketplace`](https://github.com/zapier/marketplace): install this plugin (and every other Zapier plugin) through Zapier's marketplace for coding agents.
+
+Also listed on the [official MCP Registry](https://registry.modelcontextprotocol.io) as `com.zapier/mcp`, [Smithery](https://smithery.ai/servers/zapier), and [PulseMCP](https://www.pulsemcp.com/servers/zapier).
 
 ## Skills
 

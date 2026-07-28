@@ -34,6 +34,13 @@ gemini extensions install https://github.com/zapier/zapier-mcp
 
 Authenticate inside Gemini with `/mcp auth zapier`. The catalog entry is [`gemini-extension.json`](./gemini-extension.json) at the repo root, auto-indexed into the [Gemini CLI Extensions gallery](https://geminicli.com/extensions).
 
+## Third-party registries
+
+Zapier MCP is also listed on:
+
+- [Smithery](https://smithery.ai/servers/zapier)
+- [PulseMCP](https://www.pulsemcp.com/servers/zapier)
+
 ## For contributors
 
 - [AGENTS.md](./AGENTS.md): guide for AI agents working in this repo

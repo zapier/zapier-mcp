@@ -96,7 +96,6 @@ Any `https://docs.zapier.com/<path>` page has a raw-markdown mirror — append `
 | GitHub Copilot CLI plugin manifest | [plugins/zapier/.github/plugin/plugin.json](./plugins/zapier/.github/plugin/plugin.json) |
 | Gemini CLI extension manifest | [gemini-extension.json](./gemini-extension.json) |
 | Kiro Power manifest + steering | [zapier-power/](./zapier-power/) |
-| MCP Registry manifest | [server.json](./server.json) |
 | LLM discovery index | [llms.txt](./llms.txt) |
 | Repo overview for humans | [README.md](./README.md) |
 | How to contribute | [CONTRIBUTING.md](./CONTRIBUTING.md) |
