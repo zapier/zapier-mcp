@@ -8,11 +8,9 @@
 
 # Zapier MCP Plugin Distribution
 
-The official home of the [Zapier MCP](https://docs.zapier.com/mcp/home) plugin — the safest way to give an agent access to your apps. ⚡
+[Zapier MCP](https://docs.zapier.com/mcp/home) gives any MCP-compatible AI client governed access to 9,000+ apps — send messages, pull data, trigger workflows, all in plain English. No code, no infrastructure, SOC 2 Type II certified. ⚡
 
-Zapier MCP is a hosted server that gives your AI governed, credential-safe access to 9,000+ apps. Send messages, pull data, trigger workflows. All in plain English.
-
-This plugin is the part that lives in your AI client. Install it from your client's marketplace and your assistant arrives knowing how to use Zapier well, with guided onboarding, a quick demo, and skills tailored to your role.
+This repo distributes the Zapier MCP plugin — the part that lives in your AI client. Install it from your client's marketplace and your assistant arrives knowing how to use Zapier well, with guided onboarding, a quick demo, and skills tailored to your role.
 
 ![AI connects to Zapier MCP, which connects to Gmail, Slack, Google Sheets, Notion, HubSpot, Salesforce, Linear, Asana, and 9,000 more apps](./assets/mcp-apps-diagram.png)
 
