@@ -1,14 +1,18 @@
+![Zapier MCP](./assets/mcp-logo.png)
+
+[![MCP Registry](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fregistry.modelcontextprotocol.io%2Fv0.1%2Fservers%2Fcom.zapier%252Fmcp%2Fversions%2Flatest&query=%24.server.version&label=MCP%20Registry&logo=modelcontextprotocol)](https://registry.modelcontextprotocol.io/v0.1/servers/com.zapier%2Fmcp/versions/latest)
+
 # Zapier MCP Plugin Distribution
 
-The official home of the [Zapier MCP](https://docs.zapier.com/mcp/home) plugin! ⚡
+The official home of the [Zapier MCP](https://docs.zapier.com/mcp/home) plugin — the safest way to give an agent access to your apps. ⚡
 
-Zapier MCP is a hosted server that connects your AI to 9,000+ apps. Send messages, pull data, trigger workflows. All in plain English.
+Zapier MCP is a hosted server that gives your AI governed, credential-safe access to 9,000+ apps — OAuth-managed, nothing exposed to the model. Send messages, pull data, trigger workflows. All in plain English.
 
 This plugin is the part that lives in your AI client. Install it from your client's marketplace and your assistant arrives knowing how to use Zapier well, with guided onboarding, a quick demo, and skills tailored to your role.
 
 **Get started with the plugin** → [docs.zapier.com/mcp/clients](https://docs.zapier.com/mcp/clients)
 
-https://github.com/user-attachments/assets/8304058f-67da-40b9-bc4f-5095b2817d61
+![AI connects to Zapier MCP, which connects to Gmail, Slack, Google Sheets, Notion, HubSpot, Salesforce, Linear, Asana, and 9,000 more apps](./assets/mcp-apps-diagram.png)
 
 ## What's in this repo
 
