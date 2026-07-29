@@ -22,21 +22,16 @@ This plugin is the part that lives in your AI client. Install it from your clien
 
 This repo doesn't host its own marketplace — install the plugin through one of these:
 
-- [`zapier/marketplace`](https://github.com/zapier/marketplace): Zapier's marketplace for coding agents, covering this plugin plus every other Zapier plugin (Notion, Google Sheets, the SDK, and more)
-- [`anthropics/claude-plugins-official`](https://github.com/anthropics/claude-plugins-official): Anthropic's curated Claude Code marketplace
-- [`anthropics/knowledge-work-plugins`](https://github.com/anthropics/knowledge-work-plugins): Anthropic's Claude Cowork marketplace
-- [`kirodotdev/powers`](https://github.com/kirodotdev/powers): Kiro's Powers catalog, browsable at [kiro.dev/powers](https://kiro.dev/powers)
-- [`cursor/mcp-servers`](https://github.com/cursor/mcp-servers/tree/main/servers/zapier): Cursor's MCP server registry, surfaced at [cursor.com/marketplace/zapier](https://cursor.com/marketplace/zapier)
+- **Claude Code**: [![Install in Claude Code](https://img.shields.io/badge/Claude_Code-Install_Server-D97757?style=flat-square&logo=claude&logoColor=white)](claude://code/new?q=Install%20Zapier%20MCP%20for%20me%20globally.%0A%0ARun%20this%20command%3A%0A%20%20claude%20mcp%20add%20--transport%20http%20%22Zapier-MCP%22%20https%3A//mcp.zapier.com/api/v1/connect%0A%0AThen%20give%20me%20step-by-step%20instructions%20for%20how%20to%20restart%20Claude%20Code.%20After%20restarting%2C%20use%20get_zapier_skill%20with%20name%20%22zapier%3Aonboarding%22%20and%20follow%20its%20instructions%20to%20set%20me%20up.) — or add [`zapier/marketplace`](https://github.com/zapier/marketplace) / [`anthropics/claude-plugins-official`](https://github.com/anthropics/claude-plugins-official) manually
+- **Cursor**: [cursor.com/marketplace/zapier](https://cursor.com/marketplace/zapier), via [`cursor/mcp-servers`](https://github.com/cursor/mcp-servers/tree/main/servers/zapier)
+- **VS Code**: [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](vscode:mcp/install?%7B%22name%22%3A%22zapier%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.zapier.com%2Fapi%2Fv1%2Fconnect%22%2C%22type%22%3A%22http%22%2C%22icons%22%3A%7B%22src%22%3A%22https%3A%2F%2Fmcp.zapier.com%2Ficon-mcp.png%22%7D%7D)
+- **OpenAI Codex**: via [`zapier/marketplace`](https://github.com/zapier/marketplace)
+- **GitHub Copilot CLI**: via [`zapier/marketplace`](https://github.com/zapier/marketplace)
+- **Claude Cowork**: via [`anthropics/knowledge-work-plugins`](https://github.com/anthropics/knowledge-work-plugins)
+- **Kiro**: [kiro.dev/powers](https://kiro.dev/powers)
+- **Gemini CLI**: `gemini extensions install https://github.com/zapier/zapier-mcp`, then `/mcp auth zapier` — see [`gemini-extension.json`](./gemini-extension.json)
 
-All of these pull the plugin straight from [`plugins/zapier/`](./plugins/zapier/) in this repo, so they always stay in sync with it.
-
-Gemini CLI is the one exception — it installs directly from this repo's root, not through an external marketplace:
-
-```
-gemini extensions install https://github.com/zapier/zapier-mcp
-```
-
-Authenticate inside Gemini with `/mcp auth zapier`. The catalog entry is [`gemini-extension.json`](./gemini-extension.json) at the repo root, auto-indexed into the [Gemini CLI Extensions gallery](https://geminicli.com/extensions).
+All of these pull the plugin straight from [`plugins/zapier/`](./plugins/zapier/) in this repo, except VS Code, which connects directly to the hosted MCP server.
 
 ## Third-party registries
 
@@ -49,9 +44,4 @@ Zapier MCP is also listed on:
 
 - [AGENTS.md](./AGENTS.md): guide for AI agents working in this repo
 - [CONTRIBUTING.md](./CONTRIBUTING.md): how to contribute
-- **Per-client manifests**: [Claude Code](./plugins/zapier/.claude-plugin/plugin.json), [OpenAI Codex](./plugins/zapier/.codex-plugin/plugin.json), [Cursor](./plugins/zapier/.cursor-plugin/plugin.json), [GitHub Copilot CLI](./plugins/zapier/.github/plugin/plugin.json), and [Gemini CLI](./gemini-extension.json)
 - [`llms.txt`](./llms.txt): LLM discovery index
-
----
-
-*Zapier MCP is part of the [Model Context Protocol](https://modelcontextprotocol.io/) ecosystem.*
