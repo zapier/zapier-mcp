@@ -3,6 +3,8 @@
 [![MCP Registry](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fregistry.modelcontextprotocol.io%2Fv0.1%2Fservers%2Fcom.zapier%252Fmcp%2Fversions%2Flatest&query=%24.server.version&label=MCP%20Registry&logo=modelcontextprotocol)](https://registry.modelcontextprotocol.io/v0.1/servers/com.zapier%2Fmcp/versions/latest)
 [![MCP Server](https://badge.mcpx.dev?type=server&features=tools 'MCP Server')](https://modelcontextprotocol.io/)
 [![License](https://img.shields.io/github/license/zapier/zapier-mcp)](./LICENSE)
+[![Install in Claude Code](https://img.shields.io/badge/Claude_Code-Install_Server-D97757?style=flat-square&logo=claude&logoColor=white)](claude://code/new?q=Install%20Zapier%20MCP%20for%20me%20globally.%0A%0ARun%20this%20command%3A%0A%20%20claude%20mcp%20add%20--transport%20http%20%22Zapier-MCP%22%20https%3A//mcp.zapier.com/api/v1/connect%0A%0AThen%20give%20me%20step-by-step%20instructions%20for%20how%20to%20restart%20Claude%20Code.%20After%20restarting%2C%20use%20get_zapier_skill%20with%20name%20%22zapier%3Aonboarding%22%20and%20follow%20its%20instructions%20to%20set%20me%20up.)
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](vscode:mcp/install?%7B%22name%22%3A%22zapier%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.zapier.com%2Fapi%2Fv1%2Fconnect%22%2C%22type%22%3A%22http%22%2C%22icons%22%3A%7B%22src%22%3A%22https%3A%2F%2Fmcp.zapier.com%2Ficon-mcp.png%22%7D%7D)
 
 # Zapier MCP Plugin Distribution
 
@@ -22,9 +24,9 @@ This plugin is the part that lives in your AI client. Install it from your clien
 
 ## Where to install this plugin
 
-- **Claude Code**: [![Install in Claude Code](https://img.shields.io/badge/Claude_Code-Install_Server-D97757?style=flat-square&logo=claude&logoColor=white)](claude://code/new?q=Install%20Zapier%20MCP%20for%20me%20globally.%0A%0ARun%20this%20command%3A%0A%20%20claude%20mcp%20add%20--transport%20http%20%22Zapier-MCP%22%20https%3A//mcp.zapier.com/api/v1/connect%0A%0AThen%20give%20me%20step-by-step%20instructions%20for%20how%20to%20restart%20Claude%20Code.%20After%20restarting%2C%20use%20get_zapier_skill%20with%20name%20%22zapier%3Aonboarding%22%20and%20follow%20its%20instructions%20to%20set%20me%20up.) — or add [`zapier/marketplace`](https://github.com/zapier/marketplace) / [`anthropics/claude-plugins-official`](https://github.com/anthropics/claude-plugins-official) manually
+- **Claude Code**: add [`zapier/marketplace`](https://github.com/zapier/marketplace) or [`anthropics/claude-plugins-official`](https://github.com/anthropics/claude-plugins-official) manually
 - **Cursor**: [cursor.com/marketplace/zapier](https://cursor.com/marketplace/zapier), via [`cursor/mcp-servers`](https://github.com/cursor/mcp-servers/tree/main/servers/zapier)
-- **VS Code**: [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](vscode:mcp/install?%7B%22name%22%3A%22zapier%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.zapier.com%2Fapi%2Fv1%2Fconnect%22%2C%22type%22%3A%22http%22%2C%22icons%22%3A%7B%22src%22%3A%22https%3A%2F%2Fmcp.zapier.com%2Ficon-mcp.png%22%7D%7D)
+- **VS Code**: connects directly to the hosted MCP server — use the badge above, or add `https://mcp.zapier.com/api/v1/connect` (`type: http`) manually
 - **OpenAI Codex**: via [`zapier/marketplace`](https://github.com/zapier/marketplace)
 - **GitHub Copilot CLI**: via [`zapier/marketplace`](https://github.com/zapier/marketplace)
 - **Claude Cowork**: via [`anthropics/knowledge-work-plugins`](https://github.com/anthropics/knowledge-work-plugins)
