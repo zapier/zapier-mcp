@@ -1,3 +1,5 @@
+[![MCP Toplist](https://mcptoplist.com/badge/com.zapier%2Fmcp.svg)](https://mcptoplist.com/server/com.zapier%2Fmcp)
+
 ![Zapier MCP](./assets/mcp-logo.png)
 
 [![MCP Registry](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fregistry.modelcontextprotocol.io%2Fv0.1%2Fservers%2Fcom.zapier%252Fmcp%2Fversions%2Flatest&query=%24.server.version&label=MCP%20Registry&logo=modelcontextprotocol)](https://registry.modelcontextprotocol.io/v0.1/servers/com.zapier%2Fmcp/versions/latest)
