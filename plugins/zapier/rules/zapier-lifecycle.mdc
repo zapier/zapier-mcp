@@ -15,7 +15,7 @@ If no Zapier MCP tools are available, the server is installed but not yet authen
 
 First, try to authenticate directly by calling `mcp_auth` on the Zapier MCP server. If that fails or is unavailable, fall back to manual instructions based on the client:
 
-- **Cursor:** Settings → Cursor Settings → Tools & MCP → click **Connect** next to Zapier MCP. (Or Cmd+Shift+P and search "MCP".)
+- **Grok Bot:** Select **Plugins**, open Zapier, and follow the authentication prompt.
 - **Claude Desktop:** Customize → Connectors → Zapier → click **Connect**.
 - **Other clients:** Authenticate Zapier MCP through the client's MCP server settings. The client will redirect to mcp.zapier.com to sign in.
 

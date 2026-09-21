@@ -4,7 +4,7 @@
 [![MCP Server](https://badge.mcpx.dev?type=server&features=tools 'MCP Server')](https://modelcontextprotocol.io/)
 [![License](https://img.shields.io/github/license/zapier/zapier-mcp)](./LICENSE)
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=zapier&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.zapier.com%2Fapi%2Fv1%2Fconnect%22%7D)
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=zapier&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuemFwaWVyLmNvbS9hcGkvdjEvY29ubmVjdCJ9)
+[![Install in Grok Bot](https://img.shields.io/badge/Grok_Bot-Install_Zapier-000000?style=flat-square)](https://cursor.com/marketplace/zapier)
 
 # Zapier MCP Plugin Distribution
 
@@ -25,7 +25,7 @@ Connecting Zapier MCP to your AI client only takes a server URL — see [docs.za
 A few clients also install the plugin distributed from this repo, which layers guided onboarding, a first-use demo, and role-tailored skills on top of that base connection:
 
 - **Claude Code**: add [`zapier/marketplace`](https://github.com/zapier/marketplace) or [`anthropics/claude-plugins-official`](https://github.com/anthropics/claude-plugins-official)
-- **Cursor**: use the badge above, or add [`cursor/mcp-servers`](https://github.com/cursor/mcp-servers/tree/main/servers/zapier)
+- **Grok Bot**: open **Plugins**, find Zapier, and add it. Use the [Grok Bot setup guide](https://docs.zapier.com/mcp/get-started/connect/grok-bot) for the complete flow.
 - **OpenAI Codex** and **GitHub Copilot CLI**: add [`zapier/marketplace`](https://github.com/zapier/marketplace)
 - **Claude Cowork**: add [`anthropics/knowledge-work-plugins`](https://github.com/anthropics/knowledge-work-plugins)
 - **Kiro**: via [kiro.dev/powers](https://kiro.dev/powers)

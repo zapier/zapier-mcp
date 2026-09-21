@@ -8,7 +8,7 @@ This repository contains per-client plugin manifests, install assets, skills, an
 
 - [README](https://github.com/zapier/zapier-mcp/blob/main/README.md): What Zapier MCP is, what it can do, and how to connect a client.
 - [Quickstart (5 min)](https://docs.zapier.com/mcp/quickstart.md): Step-by-step setup in any MCP client.
-- [Supported clients](https://docs.zapier.com/mcp/clients.md): Per-client setup guides for Claude, Cursor, VS Code, Windsurf, ChatGPT, and more.
+- [Supported clients](https://docs.zapier.com/mcp/clients.md): Per-client setup guides for Claude, Grok Bot, VS Code, Windsurf, ChatGPT, and more.
 - [Product page](https://zapier.com/mcp): Sign-up and the action library.
 
 ## Plugin manifests
@@ -17,7 +17,7 @@ Per-client install manifests live under `plugins/zapier/`. Each surfaces the sam
 
 - [Claude Code plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.claude-plugin/plugin.json): Manifest for Claude Code's plugin marketplace.
 - [OpenAI Codex plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.codex-plugin/plugin.json): Manifest for OpenAI Codex's plugin marketplace.
-- [Cursor plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.cursor-plugin/plugin.json): Manifest for Cursor's plugin marketplace.
+- [Grok Bot plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.cursor-plugin/plugin.json): Manifest distributed through the Cursor marketplace that Grok Bot uses for plugins.
 - [Gemini CLI extension manifest](https://github.com/zapier/zapier-mcp/blob/main/gemini-extension.json): `gemini-extension.json` for `gemini extensions install` from the GitHub URL, auto-indexed into the Gemini CLI Extensions gallery.
 - [MCP server config](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.mcp.json): Generic `mcpServers` declaration with `"type": "http"`.
 - [`zapier/marketplace`](https://github.com/zapier/marketplace): install this plugin (and every other Zapier plugin) through Zapier's marketplace for coding agents.

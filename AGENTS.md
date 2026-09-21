@@ -31,9 +31,9 @@ The MCP server URL is the same across all clients: `https://mcp.zapier.com/api/v
 
 If Anthropic's [`claude-plugins-official`](https://github.com/anthropics/claude-plugins-official) marketplace is already added, skip the first step and run `/plugin install zapier@claude-plugins-official` instead.
 
-### Cursor
+### Grok Bot
 
-Direct the user to [cursor.com/marketplace/zapier](https://cursor.com/marketplace/zapier) and have them click **Install**. (No CLI install available yet.)
+Direct the user to open **Plugins** in Grok Bot, search for Zapier, and add the plugin. Grok Bot prompts them to authenticate with Zapier.
 
 ### GitHub Copilot CLI
 
@@ -92,7 +92,7 @@ Any `https://docs.zapier.com/<path>` page has a raw-markdown mirror — append `
 | Status / health checks | [plugins/zapier/skills/zapier-status/SKILL.md](./plugins/zapier/skills/zapier-status/SKILL.md) |
 | Claude Code plugin manifest | [plugins/zapier/.claude-plugin/plugin.json](./plugins/zapier/.claude-plugin/plugin.json) |
 | OpenAI Codex plugin manifest | [plugins/zapier/.codex-plugin/plugin.json](./plugins/zapier/.codex-plugin/plugin.json) |
-| Cursor plugin manifest | [plugins/zapier/.cursor-plugin/plugin.json](./plugins/zapier/.cursor-plugin/plugin.json) |
+| Grok Bot plugin manifest (Cursor marketplace) | [plugins/zapier/.cursor-plugin/plugin.json](./plugins/zapier/.cursor-plugin/plugin.json) |
 | GitHub Copilot CLI plugin manifest | [plugins/zapier/.github/plugin/plugin.json](./plugins/zapier/.github/plugin/plugin.json) |
 | Gemini CLI extension manifest | [gemini-extension.json](./gemini-extension.json) |
 | Kiro Power manifest + steering | [zapier-power/](./zapier-power/) |

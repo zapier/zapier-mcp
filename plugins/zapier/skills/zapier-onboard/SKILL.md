@@ -27,7 +27,7 @@ Check if any Zapier MCP tools are available:
 
   If `mcp_auth` fails or is unavailable, fall back to manual instructions based on their client:
 
-  - **In Cursor:** "Let's get you connected. Go to **Settings > Cursor Settings > Tools & MCP** and click **Connect** next to the Zapier MCP server. You can also press **Cmd+Shift+P** and search for 'MCP' to get there quickly."
+  - **In Grok Bot:** "Let's get you connected. Select **Plugins**, open Zapier, and follow the authentication prompt."
   - **In Claude Desktop:** "Let's get you connected. Go to **Customize > Connectors > Zapier** and click **Connect**."
   - **In other clients:** "Let's get you connected. Find the Zapier MCP server in your client's MCP settings and click Connect. This will redirect you to mcp.zapier.com to sign in."
 
@@ -94,7 +94,7 @@ The Zapier MCP server is installed via the plugin but hasn't been authenticated 
 
 3. If `mcp_auth` fails or is unavailable, fall back to manual instructions based on their client:
 
-   - **In Cursor:** "Go to **Settings > Cursor Settings > Tools & MCP** and click **Connect** next to the Zapier MCP server. You can also press **Cmd+Shift+P** and search for 'MCP' to get there quickly."
+   - **In Grok Bot:** "Select **Plugins**, open Zapier, and follow the authentication prompt."
    - **In Claude Desktop:** "Go to **Customize > Connectors > Zapier** and click **Connect**."
    - **In other clients:** "Find the Zapier MCP server in your client's MCP settings and connect it. This will redirect you to mcp.zapier.com to sign in."
 
