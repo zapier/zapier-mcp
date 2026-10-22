@@ -18,6 +18,7 @@ Per-client install manifests live under `plugins/zapier/`. Each surfaces the sam
 - [Claude Code plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.claude-plugin/plugin.json): Manifest for Claude Code's plugin marketplace.
 - [OpenAI Codex plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.codex-plugin/plugin.json): Manifest for OpenAI Codex's plugin marketplace.
 - [Cursor plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.cursor-plugin/plugin.json): Manifest for Cursor's plugin marketplace.
+- [Antigravity plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.antigravity-plugin/plugin.json): Manifest for Google Antigravity's plugin marketplace. Its MCP server is in [`mcp_config.json`](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/mcp_config.json), because Antigravity does not load `.mcp.json`.
 - [Gemini CLI extension manifest](https://github.com/zapier/zapier-mcp/blob/main/gemini-extension.json): `gemini-extension.json` for `gemini extensions install` from the GitHub URL, auto-indexed into the Gemini CLI Extensions gallery.
 - [MCP server config](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.mcp.json): Generic `mcpServers` declaration with `"type": "http"`.
 - [`zapier/marketplace`](https://github.com/zapier/marketplace): install this plugin (and every other Zapier plugin) through Zapier's marketplace for coding agents.

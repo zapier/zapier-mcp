@@ -1,0 +1,35 @@
+{
+  "name": "zapier",
+  "displayName": "Zapier",
+  "version": "1.0.0",
+  "description": "Connect 9,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions and workflows directly from your client.",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Show me around the Zapier MCP plugin and get me set up",
+    "Find a Zapier action that sends a Slack message and try it",
+    "List the Zapier apps I have connected and what actions are available"
+  ],
+  "category": "Productivity",
+  "keywords": [
+    "zapier",
+    "mcp",
+    "model-context-protocol",
+    "automation",
+    "integrations",
+    "workflow",
+    "ai-actions",
+    "api",
+    "no-code",
+    "ai-tools",
+    "productivity"
+  ],
+  "author": {
+    "name": "Zapier",
+    "email": "support@zapier.com",
+    "url": "https://zapier.com"
+  },
+  "homepage": "https://docs.zapier.com/mcp/home",
+  "repository": "https://github.com/zapier/zapier-mcp",
+  "license": "MIT",
+  "skills": ["./skills"]
+}

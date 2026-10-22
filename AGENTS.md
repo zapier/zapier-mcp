@@ -94,6 +94,7 @@ Any `https://docs.zapier.com/<path>` page has a raw-markdown mirror — append `
 | OpenAI Codex plugin manifest | [plugins/zapier/.codex-plugin/plugin.json](./plugins/zapier/.codex-plugin/plugin.json) |
 | Cursor plugin manifest | [plugins/zapier/.cursor-plugin/plugin.json](./plugins/zapier/.cursor-plugin/plugin.json) |
 | GitHub Copilot CLI plugin manifest | [plugins/zapier/.github/plugin/plugin.json](./plugins/zapier/.github/plugin/plugin.json) |
+| Google Antigravity plugin manifest + MCP config | [plugins/zapier/.antigravity-plugin/plugin.json](./plugins/zapier/.antigravity-plugin/plugin.json), [plugins/zapier/mcp_config.json](./plugins/zapier/mcp_config.json) |
 | Gemini CLI extension manifest | [gemini-extension.json](./gemini-extension.json) |
 | Kiro Power manifest + steering | [zapier-power/](./zapier-power/) |
 | LLM discovery index | [llms.txt](./llms.txt) |
