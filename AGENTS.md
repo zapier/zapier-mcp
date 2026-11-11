@@ -93,6 +93,7 @@ Any `https://docs.zapier.com/<path>` page has a raw-markdown mirror — append `
 | Claude Code plugin manifest | [plugins/zapier/.claude-plugin/plugin.json](./plugins/zapier/.claude-plugin/plugin.json) |
 | OpenAI Codex plugin manifest | [plugins/zapier/.codex-plugin/plugin.json](./plugins/zapier/.codex-plugin/plugin.json) |
 | Cursor plugin manifest | [plugins/zapier/.cursor-plugin/plugin.json](./plugins/zapier/.cursor-plugin/plugin.json) |
+| Cursor marketplace manifest | [.cursor-plugin/marketplace.json](./.cursor-plugin/marketplace.json) |
 | GitHub Copilot CLI plugin manifest | [plugins/zapier/.github/plugin/plugin.json](./plugins/zapier/.github/plugin/plugin.json) |
 | Google Antigravity plugin manifest + MCP config | [plugins/zapier/.antigravity-plugin/plugin.json](./plugins/zapier/.antigravity-plugin/plugin.json), [plugins/zapier/mcp_config.json](./plugins/zapier/mcp_config.json) |
 | Gemini CLI extension manifest | [gemini-extension.json](./gemini-extension.json) |
