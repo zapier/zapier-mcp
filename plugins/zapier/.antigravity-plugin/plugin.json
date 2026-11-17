@@ -2,7 +2,7 @@
   "name": "zapier",
   "displayName": "Zapier",
   "version": "1.0.0",
-  "description": "Connect 9,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client, and create and manage Zaps.",
+  "description": "Connect 9,000+ apps to your AI workflow. Create and manage Zaps, and run actions on-demand directly from your AI client.",
   "logo": "assets/logo.svg",
   "suggestedPrompts": [
     "Show me around the Zapier MCP plugin and get me set up",
