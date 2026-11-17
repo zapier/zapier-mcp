@@ -1,7 +1,7 @@
 ---
 name: zapier-quickstart
 description: >-
-  Zapier MCP onboarding for new users. Help the user find something they would want handled again. Show it working once, for real. Then offer to keep it running. Use when the user is new to Zapier or has just connected it, asks how to get started, "set me up", "what can Zapier do for me", "show me what this does", "help me try Zapier", or wants help picking a first automation, or when no Zapier actions are enabled yet.
+  Zapier MCP onboarding for new users. Help the user find something they would want handled again. Show it working once, for real. Then offer to keep it running.
 ---
 
 # Zapier MCP quickstart
