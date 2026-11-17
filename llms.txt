@@ -28,11 +28,11 @@ Also listed on the [official MCP Registry](https://registry.modelcontextprotocol
 
 ## Skills
 
-Steering for AI assistants invoked during onboarding, first-action demo, expansion, or status checks.
+Steering for AI assistants invoked when connecting, getting started, noticing repeated work, or checking status.
 
-- [zapier-onboard](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-onboard/SKILL.md): First-run onboarding flow — introduce Zapier MCP and connect the server.
-- [zapier-demo](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-demo/SKILL.md): Smallest-possible first win — one app, one read action, demoed live.
-- [zapier-explore](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-explore/SKILL.md): Role-tailored toolkit setup — interview the user, suggest use cases, and walk them through enabling the actions.
+- [zapier-connect](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-connect/SKILL.md): Connect or reconnect the server and recover from expired authentication.
+- [zapier-quickstart](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-quickstart/SKILL.md): First-use walkthrough — find something worth handling, show it working once, offer to keep it running.
+- [zapier-detect-workflows](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-detect-workflows/SKILL.md): Notice repeated work and suggest a Zap workflow.
 - [zapier-status](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-status/SKILL.md): Health check and audit of the user's current Zapier MCP setup.
 
 ## Rules and agent steering

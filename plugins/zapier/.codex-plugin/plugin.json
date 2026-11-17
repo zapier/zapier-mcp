@@ -28,7 +28,7 @@
   "interface": {
     "displayName": "Zapier",
     "shortDescription": "Connect your AI to 9,000+ apps via the hosted Zapier MCP server.",
-    "longDescription": "Zapier MCP is a hosted server that connects your AI to 9,000+ apps. Send messages, pull data, trigger workflows — all in plain English. This plugin bundles the MCP server connection with guided onboarding, a quick demo, and role-tailored skills so your assistant arrives already knowing how to use Zapier well.",
+    "longDescription": "Zapier MCP is a hosted server that connects your AI to 9,000+ apps. Send messages, pull data, trigger workflows — all in plain English. This plugin bundles the MCP server connection with a guided first run and skills that spot repeated work so your assistant arrives already knowing how to use Zapier well.",
     "developerName": "Zapier",
     "category": "Productivity",
     "capabilities": [

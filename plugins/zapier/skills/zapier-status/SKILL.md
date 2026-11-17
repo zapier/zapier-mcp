@@ -19,7 +19,7 @@ A quick dashboard view of the current state.
 
 1. Inspect the available Zapier MCP tools. The exact surface depends on the server's configuration — some servers expose meta-tools that report the action inventory, others expose each configured action as its own named tool. Use whichever signal is available.
 
-2. If no Zapier tools are available: report the connection status and suggest running **zapier-onboard**.
+2. If no Zapier tools are available: report the connection status and suggest running **zapier-connect**.
 
 3. If tools are available, build a summary by grouping them by app:
 
