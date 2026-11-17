@@ -27,7 +27,7 @@ Activate this Power when the user:
 
 - Wants to send messages, create records, or trigger workflows in another app (Slack, Gmail, Jira, Notion, HubSpot, etc.)
 - Asks "what can I do with Zapier", "set up Zapier", or "show me my Zapier tools"
-- Mentions a specific app you don't already have a dedicated MCP server for
+- Mentions a specific app they want to read from or act in
 - Wants to enable, disable, or audit the actions exposed by their Zapier MCP server
 - Wants to generate a personalized tools profile from their enabled actions
 

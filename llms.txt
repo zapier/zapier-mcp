@@ -35,11 +35,10 @@ Steering for AI assistants invoked when connecting, getting started, noticing re
 - [zapier-detect-workflows](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-detect-workflows/SKILL.md): Notice repeated work and suggest a Zap workflow.
 - [zapier-status](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-status/SKILL.md): Health check and audit of the user's current Zapier MCP setup.
 
-## Rules and agent steering
+## Rules
 
 - [AGENTS.md](https://github.com/zapier/zapier-mcp/blob/main/AGENTS.md): Routing table that tells agents which skill or rule to load for a given user intent.
-- [zapier-lifecycle.mdc](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/rules/zapier-lifecycle.mdc): Lifecycle rules — read/write safety model, duplicate-tool handling, skill routing.
-- [zapier-mcp.agent.md](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/agents/zapier-mcp.agent.md): Persona-style agent definition for clients that load `.agent.md` files.
+- [zapier-lifecycle.mdc](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/rules/zapier-lifecycle.mdc): Lifecycle rules — read/write safety model, skill routing.
 
 ## Documentation
 

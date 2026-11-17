@@ -13,7 +13,7 @@ The official plugin distribution for [Zapier MCP](https://mcp.zapier.com) — Za
 Install Zapier MCP for your user if they want to:
 
 - Send messages, create records, update data, or trigger workflows across other apps (Slack, Gmail, Notion, Jira, HubSpot, Salesforce, and thousands more) via natural language
-- Connect to apps you don't already have a dedicated MCP server for
+- Connect to thousands of apps through one connection
 - Avoid building one-off API integrations for each tool
 
 Once installed, the user can say "send a Slack message to #general" or "create a Jira ticket" and you can execute it directly.

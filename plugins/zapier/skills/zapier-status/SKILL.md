@@ -53,7 +53,7 @@ Google Docs   2 actions (1 read, 1 write)     ✓ working
 
 **Trigger:** "audit my setup", "clean up my tools", "find duplicates", "what should I remove?"
 
-Find inefficiencies: duplicate actions, unused tools, conflicts with native MCP servers.
+Find inefficiencies: duplicate actions and unused tools.
 
 ### Steps
 
@@ -63,16 +63,11 @@ Find inefficiencies: duplicate actions, unused tools, conflicts with native MCP 
    - Multiple actions for the same app that do similar things (e.g., both a "find message" and a "search messages" Slack action)
    - Recommend removing the less useful one
 
-3. **Check for conflicts with native MCP servers:**
-   - Look at other MCP servers configured in the client's MCP config file (e.g., `.cursor/mcp.json`, `claude_desktop_config.json`, `.mcp.json` — depends on the client)
-   - If the user has both a native Slack MCP and Zapier Slack actions, flag it
-   - Recommend: "You have Slack through both Zapier and a native Slack server. The native server is usually better for single-app use. Consider removing Zapier's Slack actions."
-
-4. **Check for unused or low-value actions:**
+3. **Check for unused or low-value actions:**
    - Actions that are rarely useful as defaults (e.g., very specific write actions that are only needed occasionally)
    - Suggest removing actions that can be re-added on demand
 
-5. **Show the audit report:**
+4. **Show the audit report:**
 
 ```
 Audit results
@@ -80,18 +75,15 @@ Audit results
 Duplicates:       1 found
   - Slack: "find_message" and "search_messages" overlap. Recommend removing "search_messages".
 
-Native conflicts:  1 found
-  - Slack: native Slack MCP also configured. Consider removing Zapier Slack actions.
-
 Cleanup candidates: 2 found
   - Google Sheets "delete_row": rarely needed, can re-add on demand
   - Jira "add_attachment": niche action, add when needed
 
-Recommended removals: 4 actions
+Recommended removals: 3 actions
 Want me to show you how to clean these up?
 ```
 
-6. If the user says yes, direct them to [mcp.zapier.com](https://mcp.zapier.com) to remove the recommended actions (or use the server's in-chat disable tool if available). List exactly which ones to remove.
+5. If the user says yes, direct them to [mcp.zapier.com](https://mcp.zapier.com) to remove the recommended actions (or use the server's in-chat disable tool if available). List exactly which ones to remove.
 
 ## Mode 3: Diagnose
 
