@@ -1,5 +1,5 @@
 ---
-name: Zapier MCP Specialist
+name: zapier-mcp-specialist
 description: Uses Zapier MCP to discover, enable, audit, and execute app actions safely and efficiently while following Zapier's read/write confirmation lifecycle.
 target: any
 tools: ["*"]
