@@ -9,16 +9,13 @@
   Send messages, pull data, trigger workflows, all in plain English. ⚡
 </p>
 
-<p align="center">
-  [![MCP Registry](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fregistry.modelcontextprotocol.io%2Fv0.1%2Fservers%2Fcom.zapier%252Fmcp%2Fversions%2Flatest&query=%24.server.version&label=MCP%20Registry&logo=modelcontextprotocol)](https://registry.modelcontextprotocol.io/v0.1/servers/com.zapier%2Fmcp/versions/latest)
-  [![MCP Server](https://badge.mcpx.dev?type=server&features=tools 'MCP Server')](https://modelcontextprotocol.io/)
-  [![License](https://img.shields.io/github/license/zapier/zapier-mcp)](./LICENSE)
-</p>
+<div align="center">
 
-<p align="center">
-  [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=zapier&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.zapier.com%2Fapi%2Fv1%2Fconnect%22%7D)
-  [![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=zapier&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuemFwaWVyLmNvbS9hcGkvdjEvY29ubmVjdCJ9)
-</p>
+[![MCP Registry](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fregistry.modelcontextprotocol.io%2Fv0.1%2Fservers%2Fcom.zapier%252Fmcp%2Fversions%2Flatest&query=%24.server.version&label=MCP%20Registry&logo=modelcontextprotocol)](https://registry.modelcontextprotocol.io/v0.1/servers/com.zapier%2Fmcp/versions/latest) [![MCP Server](https://badge.mcpx.dev?type=server&features=tools 'MCP Server')](https://modelcontextprotocol.io/) [![License](https://img.shields.io/github/license/zapier/zapier-mcp)](./LICENSE)
+
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=zapier&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.zapier.com%2Fapi%2Fv1%2Fconnect%22%7D) [![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=zapier&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuemFwaWVyLmNvbS9hcGkvdjEvY29ubmVjdCJ9)
+
+</div>
 
 ---
 
