@@ -10,13 +10,12 @@ author: "Zapier"
 
 ## Overview
 
-Connect your AI assistant to 9,000+ apps — Slack, Gmail, Google Calendar, Jira, Notion, HubSpot, and thousands more. Once set up, you can search across your tools, take actions, and automate workflows through natural conversation. Zapier MCP is personalized to your workflow: you pick the apps and actions that matter to you, and your AI learns to use them.
+Connect your AI assistant to 10,000+ apps — Slack, Gmail, Google Calendar, Jira, Notion, HubSpot, and thousands more. Once set up, you can search across your tools, take actions, and automate workflows through natural conversation. Zapier MCP is personalized to your workflow: you pick the apps and actions that matter to you, and your AI learns to use them.
 
 **Key capabilities:**
 
-- **Cross-app workflows**: Chain reads and writes across Slack, Gmail, Jira, Notion, HubSpot, and 9,000+ other apps through natural conversation
+- **Cross-app workflows**: Chain reads and writes across Slack, Gmail, Jira, Notion, HubSpot, and 10,000+ other apps through natural conversation
 - **Built-in safety model**: Read actions run without confirmation; write actions require explicit user approval
-- **Personalized tool profiles**: Generate persistent AI instructions tailored to the specific set of actions you have enabled
 - **OAuth authentication**: No API keys required — authenticate once via mcp.zapier.com and per-app OAuth flows
 
 For how the Zapier MCP server itself works — tool surface, configuration, action management — see [docs.zapier.com/mcp](https://docs.zapier.com/mcp/home).
@@ -29,7 +28,6 @@ Activate this Power when the user:
 - Asks "what can I do with Zapier", "set up Zapier", or "show me my Zapier tools"
 - Mentions a specific app they want to read from or act in
 - Wants to enable, disable, or audit the actions exposed by their Zapier MCP server
-- Wants to generate a personalized tools profile from their enabled actions
 
 ## Onboarding
 

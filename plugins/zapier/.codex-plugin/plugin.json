@@ -1,6 +1,6 @@
 {
   "name": "zapier",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Automate workflows across 10,000+ apps. Run one-off actions or build automations with triggers.",
   "author": {
     "name": "Zapier",
@@ -27,8 +27,8 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Zapier",
-    "shortDescription": "Connect your AI to 9,000+ apps via the hosted Zapier MCP server.",
-    "longDescription": "Zapier MCP is a hosted server that connects your AI to 9,000+ apps. Send messages, pull data, trigger workflows — all in plain English. This plugin bundles the MCP server connection with a guided first run and skills that spot repeated work so your assistant arrives already knowing how to use Zapier well.",
+    "shortDescription": "Connect your AI to 10,000+ apps via the hosted Zapier MCP server.",
+    "longDescription": "Zapier MCP is a hosted server that connects your AI to 10,000+ apps. Send messages, pull data, trigger workflows — all in plain English. This plugin bundles the MCP server connection with a guided first run and skills that spot repeated work so your assistant arrives already knowing how to use Zapier well.",
     "developerName": "Zapier",
     "category": "Productivity",
     "capabilities": [

@@ -1,6 +1,6 @@
 # Zapier MCP Plugin
 
-[Zapier MCP](https://docs.zapier.com/mcp/home) is how your AI talks to the apps you already live in. 9,000+ of them, 40,000+ actions, all triggered by a sentence. Create and manage Zaps, or run an action on demand. This plugin makes it effortless to get there: a guided first run that finds work worth automating, and the shortest path from "I wish my AI could do that" to it actually happening.
+[Zapier MCP](https://docs.zapier.com/mcp/home) is how your AI talks to the apps you already live in. 10,000+ of them, all triggered by a sentence. Create and manage Zaps, or run an action on demand. This plugin makes it effortless to get there: a guided first run that finds work worth automating, and the shortest path from "I wish my AI could do that" to it actually happening.
 
 ## Get started
 

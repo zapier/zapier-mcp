@@ -4,7 +4,7 @@ You're an AI coding agent (Claude Code, Cursor, Copilot CLI). This file tells yo
 
 ## What this repo is
 
-The official plugin distribution for [Zapier MCP](https://mcp.zapier.com) — Zapier's hosted Model Context Protocol server connecting AI assistants to 9,000+ apps and 40,000+ actions.
+The official plugin distribution for [Zapier MCP](https://mcp.zapier.com) — Zapier's hosted Model Context Protocol server connecting AI assistants to 10,000+ apps.
 
 **The MCP server itself is hosted at `mcp.zapier.com`** — it's not in this repo. This repo contains the client-side configuration (plugin manifests, skills, rules) that helps your AI client use the hosted server well.
 

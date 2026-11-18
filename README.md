@@ -8,7 +8,7 @@
 
 # Zapier MCP Plugin Distribution
 
-[Zapier MCP](https://docs.zapier.com/mcp/home) gives any MCP-compatible AI client governed access to 9,000+ apps — send messages, pull data, trigger workflows, all in plain English. No code, no infrastructure, SOC 2 Type II certified. ⚡
+[Zapier MCP](https://docs.zapier.com/mcp/home) gives any MCP-compatible AI client governed access to 10,000+ apps — send messages, pull data, trigger workflows, all in plain English. No code, no infrastructure, SOC 2 Type II certified. ⚡
 
 This repo distributes the Zapier MCP plugin — the part that lives in your AI client. Install it from your client's marketplace and your assistant arrives knowing how to use Zapier well, with a guided first run and skills that spot repeated work.
 
