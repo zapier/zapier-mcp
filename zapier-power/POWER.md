@@ -1,7 +1,7 @@
 ---
 name: "zapier"
 displayName: "Zapier"
-description: "Connect 9,000+ apps to your AI workflow — discover, enable, and execute Zapier actions directly from your AI assistant."
+description: "Automate workflows across 10,000+ apps. Run one-off actions or build automations with triggers."
 keywords: ["zapier", "automation", "integrations", "workflow", "ai-actions", "mcp", "no-code", "productivity", "slack", "gmail", "jira", "notion", "hubspot"]
 author: "Zapier"
 ---
@@ -10,13 +10,12 @@ author: "Zapier"
 
 ## Overview
 
-Connect your AI assistant to 9,000+ apps — Slack, Gmail, Google Calendar, Jira, Notion, HubSpot, and thousands more. Once set up, you can search across your tools, take actions, and automate workflows through natural conversation. Zapier MCP is personalized to your workflow: you pick the apps and actions that matter to you, and your AI learns to use them.
+Connect your AI assistant to 10,000+ apps — Slack, Gmail, Google Calendar, Jira, Notion, HubSpot, and thousands more. Once set up, you can search across your tools, take actions, and automate workflows through natural conversation. Zapier MCP is personalized to your workflow: you pick the apps and actions that matter to you, and your AI learns to use them.
 
 **Key capabilities:**
 
-- **Cross-app workflows**: Chain reads and writes across Slack, Gmail, Jira, Notion, HubSpot, and 9,000+ other apps through natural conversation
+- **Cross-app workflows**: Chain reads and writes across Slack, Gmail, Jira, Notion, HubSpot, and 10,000+ other apps through natural conversation
 - **Built-in safety model**: Read actions run without confirmation; write actions require explicit user approval
-- **Personalized tool profiles**: Generate persistent AI instructions tailored to the specific set of actions you have enabled
 - **OAuth authentication**: No API keys required — authenticate once via mcp.zapier.com and per-app OAuth flows
 
 For how the Zapier MCP server itself works — tool surface, configuration, action management — see [docs.zapier.com/mcp](https://docs.zapier.com/mcp/home).
@@ -27,9 +26,8 @@ Activate this Power when the user:
 
 - Wants to send messages, create records, or trigger workflows in another app (Slack, Gmail, Jira, Notion, HubSpot, etc.)
 - Asks "what can I do with Zapier", "set up Zapier", or "show me my Zapier tools"
-- Mentions a specific app you don't already have a dedicated MCP server for
+- Mentions a specific app they want to read from or act in
 - Wants to enable, disable, or audit the actions exposed by their Zapier MCP server
-- Wants to generate a personalized tools profile from their enabled actions
 
 ## Onboarding
 
@@ -42,23 +40,23 @@ After installing this power, connect the Zapier MCP server:
 
 ### Step 2: Get started
 
-- **If Zapier tools are available**: Say **"onboard zapier"** to inspect what's configured and walk through next steps
+- **If Zapier tools are available**: Ask to get started with Zapier to inspect what's configured and see a first result
 - **If not connected**: Attempt `mcp_auth` on the Zapier MCP server, or follow the manual connection steps above
 
 ## Available Steering Files
 
 | File | Purpose |
 |---|---|
-| [`steering/zapier-onboard.md`](./steering/zapier-onboard.md) | First-run onboarding — pitch, authentication, and routing to the next step |
-| [`steering/zapier-demo.md`](./steering/zapier-demo.md) | Smallest-possible first win — one app, one read action, demoed live |
-| [`steering/zapier-explore.md`](./steering/zapier-explore.md) | Role-tailored toolkit setup — interview, use cases, walk through enabling |
+| [`steering/zapier-connect.md`](./steering/zapier-connect.md) | Connect or reconnect the server, diagnose authentication, and reload the client |
+| [`steering/zapier-quickstart.md`](./steering/zapier-quickstart.md) | First-use walkthrough — find something worth handling, show it working, offer to keep it running |
+| [`steering/zapier-detect-workflows.md`](./steering/zapier-detect-workflows.md) | Notice repeated work and suggest a Zap workflow |
 | [`steering/zapier-status.md`](./steering/zapier-status.md) | Health check, audit, and diagnose modes for monitoring the setup |
 
 ## When to Load Steering Files
 
-- Onboarding a new user or troubleshooting connection issues → `zapier-onboard.md`
-- Quick demo or smallest first win → `zapier-demo.md`
-- Setting up a role-tailored toolkit ("what should I enable for my role?") → `zapier-explore.md`
+- Connecting, reconnecting, or troubleshooting the connection → `zapier-connect.md`
+- New to Zapier or wants a first result → `zapier-quickstart.md`
+- Repeating a task or describing a habit worth automating → `zapier-detect-workflows.md`
 - Checking tool health, auditing setup, or diagnosing broken tools → `zapier-status.md`
 
 ## Available MCP Servers

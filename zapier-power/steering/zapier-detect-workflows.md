@@ -1,0 +1,1 @@
+../../plugins/zapier/skills/zapier-detect-workflows/SKILL.md

@@ -4,7 +4,7 @@ You're an AI coding agent (Claude Code, Cursor, Copilot CLI). This file tells yo
 
 ## What this repo is
 
-The official plugin distribution for [Zapier MCP](https://mcp.zapier.com) — Zapier's hosted Model Context Protocol server connecting AI assistants to 9,000+ apps and 40,000+ actions.
+The official plugin distribution for [Zapier MCP](https://mcp.zapier.com) — Zapier's hosted Model Context Protocol server connecting AI assistants to 10,000+ apps.
 
 **The MCP server itself is hosted at `mcp.zapier.com`** — it's not in this repo. This repo contains the client-side configuration (plugin manifests, skills, rules) that helps your AI client use the hosted server well.
 
@@ -13,7 +13,7 @@ The official plugin distribution for [Zapier MCP](https://mcp.zapier.com) — Za
 Install Zapier MCP for your user if they want to:
 
 - Send messages, create records, update data, or trigger workflows across other apps (Slack, Gmail, Notion, Jira, HubSpot, Salesforce, and thousands more) via natural language
-- Connect to apps you don't already have a dedicated MCP server for
+- Connect to thousands of apps through one connection
 - Avoid building one-off API integrations for each tool
 
 Once installed, the user can say "send a Slack message to #general" or "create a Jira ticket" and you can execute it directly.
@@ -73,9 +73,9 @@ Then have the user sign in at [mcp.zapier.com](https://mcp.zapier.com) when prom
 
 ## After install
 
-Once the plugin is loaded, the rest of your guidance comes from the plugin itself — start with [`plugins/zapier/rules/zapier-lifecycle.mdc`](./plugins/zapier/rules/zapier-lifecycle.mdc). It covers the read/write safety model and routing between the onboard, demo, explore, and status skills. For how the Zapier MCP server itself works, see [docs.zapier.com/mcp](https://docs.zapier.com/mcp/home).
+Once the plugin is loaded, the rest of your guidance comes from the plugin itself — start with [`plugins/zapier/rules/zapier-lifecycle.mdc`](./plugins/zapier/rules/zapier-lifecycle.mdc). It covers the read/write safety model and routing between the connect, quickstart, detect-workflows, and status skills. For how the Zapier MCP server itself works, see [docs.zapier.com/mcp](https://docs.zapier.com/mcp/home).
 
-If the user is brand new, trigger the [zapier-onboard skill](./plugins/zapier/skills/zapier-onboard/SKILL.md) ("onboard zapier") to introduce Zapier MCP and walk them through connecting the server.
+If the user is brand new, trigger the [zapier-quickstart skill](./plugins/zapier/skills/zapier-quickstart/SKILL.md) to introduce Zapier MCP and get them to a first working result. If Zapier is not connected yet, use the [zapier-connect skill](./plugins/zapier/skills/zapier-connect/SKILL.md) first.
 
 ## Fetching Zapier docs
 
@@ -86,9 +86,9 @@ Any `https://docs.zapier.com/<path>` page has a raw-markdown mirror — append `
 | Need | File |
 |---|---|
 | Lifecycle rules + safety model + skill routing | [plugins/zapier/rules/zapier-lifecycle.mdc](./plugins/zapier/rules/zapier-lifecycle.mdc) |
-| Onboarding walkthrough | [plugins/zapier/skills/zapier-onboard/SKILL.md](./plugins/zapier/skills/zapier-onboard/SKILL.md) |
-| Smallest-possible first-win walkthrough | [plugins/zapier/skills/zapier-demo/SKILL.md](./plugins/zapier/skills/zapier-demo/SKILL.md) |
-| Role-tailored toolkit setup | [plugins/zapier/skills/zapier-explore/SKILL.md](./plugins/zapier/skills/zapier-explore/SKILL.md) |
+| Connect or reconnect the server | [plugins/zapier/skills/zapier-connect/SKILL.md](./plugins/zapier/skills/zapier-connect/SKILL.md) |
+| First-use walkthrough | [plugins/zapier/skills/zapier-quickstart/SKILL.md](./plugins/zapier/skills/zapier-quickstart/SKILL.md) |
+| Noticing repeated work | [plugins/zapier/skills/zapier-detect-workflows/SKILL.md](./plugins/zapier/skills/zapier-detect-workflows/SKILL.md) |
 | Status / health checks | [plugins/zapier/skills/zapier-status/SKILL.md](./plugins/zapier/skills/zapier-status/SKILL.md) |
 | Claude Code plugin manifest | [plugins/zapier/.claude-plugin/plugin.json](./plugins/zapier/.claude-plugin/plugin.json) |
 | OpenAI Codex plugin manifest | [plugins/zapier/.codex-plugin/plugin.json](./plugins/zapier/.codex-plugin/plugin.json) |

@@ -1,6 +1,6 @@
 # Zapier MCP
 
-> Official plugin distribution repository for the hosted Zapier MCP server. Install Zapier MCP in your AI client to connect your assistant to 9,000+ apps and 40,000+ actions via the Model Context Protocol.
+> Official plugin distribution repository for the hosted Zapier MCP server. Install Zapier MCP in your AI client to connect your assistant to 10,000+ apps via the Model Context Protocol.
 
 This repository contains per-client plugin manifests, install assets, skills, and rules. It does **not** contain the MCP server implementation — the server is hosted at `mcp.zapier.com/api/v1/connect` and is closed source. Pair this repo with the [Zapier MCP product page](https://zapier.com/mcp) and the [MCP documentation](https://docs.zapier.com/mcp/home.md) for the full picture.
 
@@ -19,8 +19,10 @@ Per-client install manifests live under `plugins/zapier/`. Each surfaces the sam
 - [OpenAI Codex plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.codex-plugin/plugin.json): Manifest for OpenAI Codex's plugin marketplace.
 - [Cursor plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.cursor-plugin/plugin.json): Manifest for Cursor's plugin marketplace.
 - [Cursor marketplace manifest](https://github.com/zapier/zapier-mcp/blob/main/.cursor-plugin/marketplace.json): Root manifest that points Cursor's marketplace indexer at `plugins/zapier`.
+- [GitHub Copilot CLI plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.github/plugin/plugin.json): Manifest for GitHub Copilot CLI's plugin marketplace.
 - [Antigravity plugin manifest](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.antigravity-plugin/plugin.json): Manifest for Google Antigravity's plugin marketplace. Its MCP server is in [`mcp_config.json`](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/mcp_config.json), because Antigravity does not load `.mcp.json`.
 - [Gemini CLI extension manifest](https://github.com/zapier/zapier-mcp/blob/main/gemini-extension.json): `gemini-extension.json` for `gemini extensions install` from the GitHub URL, auto-indexed into the Gemini CLI Extensions gallery.
+- [Kiro Power](https://github.com/zapier/zapier-mcp/blob/main/zapier-power/POWER.md): Power manifest and steering files for Kiro, listed at [kiro.dev/powers](https://kiro.dev/powers). Steering files are symlinks to the plugin skills.
 - [MCP server config](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/.mcp.json): Generic `mcpServers` declaration with `"type": "http"`.
 - [`zapier/marketplace`](https://github.com/zapier/marketplace): install this plugin (and every other Zapier plugin) through Zapier's marketplace for coding agents.
 
@@ -28,18 +30,17 @@ Also listed on the [official MCP Registry](https://registry.modelcontextprotocol
 
 ## Skills
 
-Steering for AI assistants invoked during onboarding, first-action demo, expansion, or status checks.
+Steering for AI assistants invoked when connecting, getting started, noticing repeated work, or checking status.
 
-- [zapier-onboard](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-onboard/SKILL.md): First-run onboarding flow — introduce Zapier MCP and connect the server.
-- [zapier-demo](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-demo/SKILL.md): Smallest-possible first win — one app, one read action, demoed live.
-- [zapier-explore](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-explore/SKILL.md): Role-tailored toolkit setup — interview the user, suggest use cases, and walk them through enabling the actions.
+- [zapier-connect](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-connect/SKILL.md): Connect or reconnect the server and recover from expired authentication.
+- [zapier-quickstart](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-quickstart/SKILL.md): First-use walkthrough — find something worth handling, show it working once, offer to keep it running.
+- [zapier-detect-workflows](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-detect-workflows/SKILL.md): Notice repeated work and suggest a Zap workflow.
 - [zapier-status](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/skills/zapier-status/SKILL.md): Health check and audit of the user's current Zapier MCP setup.
 
-## Rules and agent steering
+## Rules
 
 - [AGENTS.md](https://github.com/zapier/zapier-mcp/blob/main/AGENTS.md): Routing table that tells agents which skill or rule to load for a given user intent.
-- [zapier-lifecycle.mdc](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/rules/zapier-lifecycle.mdc): Lifecycle rules — read/write safety model, duplicate-tool handling, skill routing.
-- [zapier-mcp.agent.md](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/agents/zapier-mcp.agent.md): Persona-style agent definition for clients that load `.agent.md` files.
+- [zapier-lifecycle.mdc](https://github.com/zapier/zapier-mcp/blob/main/plugins/zapier/rules/zapier-lifecycle.mdc): Lifecycle rules — read/write safety model, skill routing.
 
 ## Documentation
 
@@ -52,6 +53,6 @@ Steering for AI assistants invoked during onboarding, first-action demo, expansi
 ## Optional
 
 - [LICENSE](https://github.com/zapier/zapier-mcp/blob/main/LICENSE): MIT.
-- [CODE_OF_CONDUCT.md](https://github.com/zapier/zapier-mcp/blob/main/CODE_OF_CONDUCT.md): Contributor Covenant.
+- [Code of Conduct](https://github.com/zapier/.github/blob/main/CODE_OF_CONDUCT.md): Zapier Code of Conduct, shared across Zapier repos.
 - [CLAUDE.md](https://github.com/zapier/zapier-mcp/blob/main/CLAUDE.md): Claude-specific guidance file (mirrors `AGENTS.md`).
 - [Brand assets](https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier/assets): Logo and icon used across plugin marketplaces.
