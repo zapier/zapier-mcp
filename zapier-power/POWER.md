@@ -1,7 +1,7 @@
 ---
 name: "zapier"
 displayName: "Zapier"
-description: "Connect 9,000+ apps to your AI workflow — create and manage Zaps, and run actions on-demand directly from your AI assistant."
+description: "Automate workflows across 10,000+ apps. Run one-off actions or build automations with triggers."
 keywords: ["zapier", "automation", "integrations", "workflow", "ai-actions", "mcp", "no-code", "productivity", "slack", "gmail", "jira", "notion", "hubspot"]
 author: "Zapier"
 ---

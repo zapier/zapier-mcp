@@ -1,7 +1,7 @@
 {
   "name": "zapier",
   "version": "1.0.0",
-  "description": "Connect 9,000+ apps to your AI workflow. Create and manage Zaps, and run actions on-demand directly from your AI client.",
+  "description": "Automate workflows across 10,000+ apps. Run one-off actions or build automations with triggers.",
   "author": {
     "name": "Zapier",
     "email": "support@zapier.com",

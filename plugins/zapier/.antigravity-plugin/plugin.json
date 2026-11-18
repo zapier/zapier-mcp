@@ -2,7 +2,7 @@
   "name": "zapier",
   "displayName": "Zapier",
   "version": "1.0.0",
-  "description": "Automate workflows across 9,000+ apps. Run one-off actions or build automations for YouTube, Instagram, Gmail, Facebook Pages, LinkedIn, Slack, Pinterest.",
+  "description": "Automate workflows across 10,000+ apps. Run one-off actions or build automations with triggers.",
   "logo": "assets/logo.svg",
   "suggestedPrompts": [
     "Upload this video to YouTube with a title and description.",
