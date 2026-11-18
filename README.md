@@ -12,8 +12,6 @@
 
 This repo distributes the Zapier MCP plugin — the part that lives in your AI client. Install it from your client's marketplace and your assistant arrives knowing how to use Zapier well, with a guided first run and skills that spot repeated work.
 
-![AI connects to Zapier MCP, which connects to Gmail, Slack, Google Sheets, Notion, HubSpot, Salesforce, Linear, Asana, and 9,000 more apps](./assets/mcp-apps-diagram.png)
-
 ## What's in this repo
 
 - **[`plugins/zapier/`](./plugins/zapier/)**: the plugin that onboards you to Zapier MCP and supercharges your experience
