@@ -2,12 +2,12 @@
   "name": "zapier",
   "displayName": "Zapier",
   "version": "1.0.0",
-  "description": "Connect 9,000+ apps to your AI workflow. Create and manage Zaps, and run actions on-demand directly from your AI client.",
+  "description": "Automate workflows across 9,000+ apps. Run one-off actions or build automations for YouTube, Instagram, Gmail, Facebook Pages, LinkedIn, Slack, Pinterest.",
   "logo": "assets/logo.svg",
   "suggestedPrompts": [
-    "Show me around the Zapier MCP plugin and get me set up",
-    "Find a Zapier action that sends a Slack message and try it",
-    "List the Zapier apps I have connected and what actions are available"
+    "Upload this video to YouTube with a title and description.",
+    "Post this image to our Instagram business account.",
+    "Find unread Gmail messages from clients and draft replies."
   ],
   "category": "Productivity",
   "keywords": [
