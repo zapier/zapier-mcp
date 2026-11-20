@@ -1,7 +1,7 @@
 {
   "name": "zapier",
-  "version": "1.1.0",
-  "description": "Automate workflows across 10,000+ apps. Run one-off actions or build automations with triggers.",
+  "version": "1.2.0",
+  "description": "Automate workflows across 10,000+ apps. Run one-off actions or build automations with triggers and actions for Facebook Lead Ads, Typeform, LinkedIn, Instagram, YouTube, Google Ads, Telegram, webhooks.",
   "author": {
     "name": "Zapier",
     "email": "support@zapier.com"
