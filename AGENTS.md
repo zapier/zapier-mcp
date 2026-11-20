@@ -101,3 +101,4 @@ Any `https://docs.zapier.com/<path>` page has a raw-markdown mirror — append `
 | LLM discovery index | [llms.txt](./llms.txt) |
 | Repo overview for humans | [README.md](./README.md) |
 | How to contribute | [CONTRIBUTING.md](./CONTRIBUTING.md) |
+| Keep the plugin description in sync across manifests (contributor skill) | [.agents/skills/sync-plugin-description/SKILL.md](./.agents/skills/sync-plugin-description/SKILL.md) |
