@@ -21,7 +21,14 @@
     "api",
     "no-code",
     "ai-tools",
-    "productivity"
+    "productivity",
+    "youtube",
+    "instagram",
+    "gmail",
+    "facebook-pages",
+    "linkedin",
+    "slack",
+    "pinterest"
   ],
   "author": {
     "name": "Zapier",

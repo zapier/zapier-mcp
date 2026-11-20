@@ -21,7 +21,13 @@
     "api",
     "no-code",
     "ai-tools",
-    "productivity"
+    "productivity",
+    "youtube",
+    "quickbooks",
+    "google-business-profile",
+    "facebook-lead-ads",
+    "google-ads",
+    "instagram"
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",

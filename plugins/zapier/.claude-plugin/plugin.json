@@ -21,7 +21,15 @@
     "api",
     "no-code",
     "ai-tools",
-    "productivity"
+    "productivity",
+    "facebook-lead-ads",
+    "typeform",
+    "linkedin",
+    "instagram",
+    "youtube",
+    "google-ads",
+    "telegram",
+    "webhooks"
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json"
